@@ -5,6 +5,8 @@
  */
 package aivon;
 
+import modelo.Conexion;
+
 /**
  *
  * @author Fran Gonzalez
@@ -16,6 +18,10 @@ public class Aivon {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        
+        Conexion c = new Conexion();
+        c.getConnection();
     }
     
 }

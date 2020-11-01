@@ -5,10 +5,24 @@
  */
 package modelo;
 
+import entidades.Pedido;
+import java.sql.Connection;
+
 /**
  *
  * @author Fran Gonzalez
  */
 public class PedidoData {
+    
+    private Connection con;
+
+    public PedidoData(Conexion conexion) {
+        con = conexion.getConnection();
+    }
+    
+    public void ingresarPedido(Pedido pedido){
+        
+        String sql = "INSERT INTO pedido ()";
+    }
     
 }
