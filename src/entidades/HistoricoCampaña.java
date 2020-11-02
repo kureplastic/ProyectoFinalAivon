@@ -15,24 +15,35 @@ public class HistoricoCampaña {
     private Campaña campaña;
     private Revendedor revendedor;
     private int estrellasRC;
+    private boolean estadoRC;
 
     public HistoricoCampaña() {
     }
-      
-    public HistoricoCampaña(int idHistoricoCampaña, Campaña campaña, Revendedor revendedor, int estrellasRC) {
+
+    public HistoricoCampaña(int idHistoricoCampaña, Campaña campaña, Revendedor revendedor, int estrellasRC, boolean estadoRC) {
         this.idHistoricoCampaña = idHistoricoCampaña;
         this.campaña = campaña;
         this.revendedor = revendedor;
-        this.revendedor.setActivo = true;
         this.estrellasRC = estrellasRC;
+        this.estadoRC = estadoRC;
     }
 
-    public HistoricoCampaña(Campaña campaña, Revendedor revendedor, int estrellasRC) {
+    public HistoricoCampaña(Campaña campaña, Revendedor revendedor, int estrellasRC, boolean estadoRC) {
         this.campaña = campaña;
         this.revendedor = revendedor;
-        this.revendedor.setActivo = true;
         this.estrellasRC = estrellasRC;
+        this.estadoRC = estadoRC;
     }
+
+    public boolean isEstadoRC() {
+        return estadoRC;
+    }
+
+    public void setEstadoRC(boolean estadoRC) {
+        this.estadoRC = estadoRC;
+    }
+      
+    
 
     public int getIdHistoricoCampaña() {
         return idHistoricoCampaña;

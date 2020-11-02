@@ -6,7 +6,7 @@ package entidades;
  */
 public class Producto {
     private int idProducto;
-    private long codigoBarra;
+    private long codigo;
     private String nombreProducto;
     private String descripcion;
     private int tamanio;
@@ -17,9 +17,9 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(int idProducto, long codigoBarra, String nombreProducto, String descripcion, int tamanio, float precioCosto, float precioPublico, int estrella) {
+    public Producto(int idProducto, long codigo, String nombreProducto, String descripcion, int tamanio, float precioCosto, float precioPublico, int estrella) {
         this.idProducto = idProducto;
-        this.codigoBarra = codigoBarra;
+        this.codigo = codigo;
         this.nombreProducto = nombreProducto;
         this.descripcion = descripcion;
         this.tamanio = tamanio;
@@ -28,8 +28,8 @@ public class Producto {
         this.estrella = estrella;
     }
 
-    public Producto(long codigoBarra, String nombreProducto, String descripcion, int tamanio, float precioCosto, float precioPublico, int estrella) {
-        this.codigoBarra = codigoBarra;
+    public Producto(long codigo, String nombreProducto, String descripcion, int tamanio, float precioCosto, float precioPublico, int estrella) {
+        this.codigo = codigo;
         this.nombreProducto = nombreProducto;
         this.descripcion = descripcion;
         this.tamanio = tamanio;
@@ -46,12 +46,12 @@ public class Producto {
         this.idProducto = idProducto;
     }
 
-    public long getCodigoBarra() {
-        return codigoBarra;
+    public long getCodigo() {
+        return codigo;
     }
 
-    public void setCodigoBarra(long codigoBarra) {
-        this.codigoBarra = codigoBarra;
+    public void setCodigo(long codigo) {
+        this.codigo = codigo;
     }
 
     public String getNombreProducto() {

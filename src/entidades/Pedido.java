@@ -5,38 +5,42 @@ import java.util.List;
 
 public class Pedido {
     private int idPedido;
-    private List<Producto> productos;
+    private Campaña campaña;
+    private Revendedor revendedor;
     private LocalDate fechaIngreso;
     private LocalDate fechaEntrega;
     private LocalDate fechaPago;
     private int cantCajas;
-    private float importe;
+    private float importeTotal;
     private int estrellaXpedido;
     private boolean estadoPedido;
     
     public Pedido() {
     }
 
-    public Pedido(int idPedido, List<Producto> productos, LocalDate fechaIngreso, LocalDate fechaEntrega, LocalDate fechaPago, int cantCajas, float importe, int estrellaXpedido, boolean estadoPedido) {
+    public Pedido(int idPedido, Campaña campaña, Revendedor revendedor, LocalDate fechaIngreso, LocalDate fechaEntrega, LocalDate fechaPago, int cantCajas, float importeTotal, int estrellaXpedido, boolean estadoPedido) {
         this.idPedido = idPedido;
-        this.productos = productos;
+        this.campaña = campaña;
+        this.revendedor = revendedor;
         this.fechaIngreso = fechaIngreso;
         this.fechaEntrega = fechaEntrega;
         this.fechaPago = fechaPago;
         this.cantCajas = cantCajas;
-        this.importe = importe;
+        this.importeTotal = importeTotal;
         this.estrellaXpedido = estrellaXpedido;
         this.estadoPedido = estadoPedido;
     }
 
-    public Pedido(List<Producto> productos, LocalDate fechaIngreso, LocalDate fechaEntrega, LocalDate fechaPago, int cantCajas, float importe, int estrellaXpedido) {
-        this.productos = productos;
+    public Pedido(Campaña campaña, Revendedor revendedor, LocalDate fechaIngreso, LocalDate fechaEntrega, LocalDate fechaPago, int cantCajas, float importeTotal, int estrellaXpedido, boolean estadoPedido) {
+        this.campaña = campaña;
+        this.revendedor = revendedor;
         this.fechaIngreso = fechaIngreso;
         this.fechaEntrega = fechaEntrega;
         this.fechaPago = fechaPago;
         this.cantCajas = cantCajas;
-        this.importe = importe;
+        this.importeTotal = importeTotal;
         this.estrellaXpedido = estrellaXpedido;
+        this.estadoPedido = estadoPedido;
     }
 
     public int getIdPedido() {
@@ -47,12 +51,20 @@ public class Pedido {
         this.idPedido = idPedido;
     }
 
-    public List<Producto> getProducto() {
-        return productos;
+    public Campaña getCampaña() {
+        return campaña;
     }
 
-    public void setProducto(List<Producto> productos) {
-        this.productos = productos;
+    public void setCampaña(Campaña campaña) {
+        this.campaña = campaña;
+    }
+
+    public Revendedor getRevendedor() {
+        return revendedor;
+    }
+
+    public void setRevendedor(Revendedor revendedor) {
+        this.revendedor = revendedor;
     }
 
     public LocalDate getFechaIngreso() {
@@ -87,12 +99,12 @@ public class Pedido {
         this.cantCajas = cantCajas;
     }
 
-    public float getImporte() {
-        return importe;
+    public float getImporteTotal() {
+        return importeTotal;
     }
 
-    public void setImporte(float importe) {
-        this.importe = importe;
+    public void setImporteTotal(float importeTotal) {
+        this.importeTotal = importeTotal;
     }
 
     public int getEstrellaXpedido() {
@@ -110,14 +122,12 @@ public class Pedido {
     public void setEstadoPedido(boolean estadoPedido) {
         this.estadoPedido = estadoPedido;
     }
-    public void cantEstrellas(){
-        
-        for(Producto x: productos){
-          estrellaXpedido += x.getEstrella();
-        }
-        
+    
+    
+
+    
        
-    }
+    
     
 }
 
