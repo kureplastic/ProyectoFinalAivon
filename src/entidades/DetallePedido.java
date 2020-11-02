@@ -11,4 +11,70 @@ package entidades;
  */
 public class DetallePedido {
     
+    private int idDetalle;
+    private Producto producto;
+    private Pedido pedido;
+    private int cantProducto;
+    private int estrellasTotales;
+
+    public DetallePedido() {
+    }
+
+    public DetallePedido(int idDetalle, Producto producto, Pedido pedido, int cantProducto, int estrellasTotales) {
+        this.idDetalle = idDetalle;
+        this.producto = producto;
+        this.pedido = pedido;
+        this.cantProducto = cantProducto;
+        this.estrellasTotales = estrellasTotales;
+    }
+
+    public DetallePedido(Producto producto, Pedido pedido, int cantProducto, int estrellasTotales) {
+        this.producto = producto;
+        this.pedido = pedido;
+        this.cantProducto = cantProducto;
+        this.estrellasTotales = estrellasTotales;
+    }
+
+    public int getIdDetalle() {
+        return idDetalle;
+    }
+
+    public void setIdDetalle(int idDetalle) {
+        this.idDetalle = idDetalle;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+
+    public Pedido getPedido() {
+        return pedido;
+    }
+
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
+    }
+
+    public int getCantProducto() {
+        return cantProducto;
+    }
+
+    public void setCantProducto(int cantProducto) {
+        this.cantProducto = cantProducto;
+    }
+
+    public int getEstrellasTotales() {
+        return estrellasTotales;
+    }
+
+    public void setEstrellasTotales(int estrellasTotales) {
+        this.estrellasTotales = estrellasTotales;
+    }
+    
+    
+    
 }
