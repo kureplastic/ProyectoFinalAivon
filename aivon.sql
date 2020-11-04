@@ -94,7 +94,7 @@ CREATE TABLE `producto` (
   `idProducto` int(11) NOT NULL,
   `codigo` bigint(8) UNSIGNED ZEROFILL NOT NULL,
   `nombreProducto` varchar(25) NOT NULL,
-  `descripcion` varchar(50) NOT NULL,
+  `descripcion` varchar(100) NOT NULL,
   `tamanio` int(11) NOT NULL,
   `precioCosto` float NOT NULL,
   `precioPublico` float NOT NULL,
