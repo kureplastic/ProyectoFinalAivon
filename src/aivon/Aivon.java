@@ -5,7 +5,9 @@
  */
 package aivon;
 
+import entidades.Producto;
 import modelo.Conexion;
+import modelo.ProductoData;
 
 /**
  *
@@ -22,6 +24,21 @@ public class Aivon {
         
         Conexion c = new Conexion();
         c.getConnection();
+        ProductoData prData1 = new ProductoData(c);
+                
+        
+        Producto prod1 = new Producto(114, "Desodorante Rollon Aivon", "Anti transpirante de uso diario con sistema rollon", 50, 65.0, 78.0, 10);
+        
+        
+        
+        
+        //prData1.guardarProducto(prod1);                                       //guardar producto con datos de prod1            
+        
+        System.out.println(prData1.buscarProducto(114).getDescripcion());       //buscar producto antes de actualizar
+        //prData1.actualizarProducto(prod1);                                    //actualizar producto 
+        //System.out.println(prData1.buscarProducto(1).getDescripcion());       //buscar producto despues de actualizar
+        
+        
     }
     
 }
