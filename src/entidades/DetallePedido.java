@@ -20,19 +20,19 @@ public class DetallePedido {
     public DetallePedido() {
     }
 
-    public DetallePedido(int idDetalle, Producto producto, Pedido pedido, int cantProducto, int estrellasTotales) {
+    public DetallePedido(int idDetalle, Producto producto, Pedido pedido, int cantProducto) {
         this.idDetalle = idDetalle;
         this.producto = producto;
         this.pedido = pedido;
         this.cantProducto = cantProducto;
-        this.estrellasTotales = estrellasTotales;
+        this.estrellasTotales = cantProducto * producto.getEstrella();
     }
 
-    public DetallePedido(Producto producto, Pedido pedido, int cantProducto, int estrellasTotales) {
+    public DetallePedido(Producto producto, Pedido pedido, int cantProducto) {
         this.producto = producto;
         this.pedido = pedido;
         this.cantProducto = cantProducto;
-        this.estrellasTotales = estrellasTotales;
+        this.estrellasTotales = cantProducto * producto.getEstrella();
     }
 
     public int getIdDetalle() {
@@ -71,8 +71,8 @@ public class DetallePedido {
         return estrellasTotales;
     }
 
-    public void setEstrellasTotales(int estrellasTotales) {
-        this.estrellasTotales = estrellasTotales;
+    public void setEstrellasTotales() {
+        this.estrellasTotales = cantProducto * producto.getEstrella();
     }
     
     
