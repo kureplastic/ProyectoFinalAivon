@@ -3,7 +3,6 @@ package modelo;
 
 import entidades.Producto;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,9 +17,9 @@ public class ProductoData {
     public ProductoData(Conexion conexion) {
         con = conexion.getConnection();
     }
-    public void guardarAlumno(Producto producto) {
+    public void guardarProducto(Producto producto) {
 
-        String sql = "INSERT INTO `producto` (`codigo`,`nombreProducto`, `descripcion`, `tamanio`,`precioCosto`, `precioPublico`, `estrella`) "
+        String sql = "INSERT INTO `producto` (`codigo`,`nombreProducto`, `descripcion`, `tamanio`,`precioCosto`, `precioPublico`, `estrellas`) "
                 + "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try {
@@ -29,8 +28,8 @@ public class ProductoData {
             ps.setString(2, producto.getNombreProducto());
             ps.setString(3, producto.getDescripcion());
             ps.setInt(4, producto.getTamanio());
-            ps.setFloat(5, producto.getPrecioCosto());
-            ps.setFloat(6, producto.getPrecioPublico());
+            ps.setDouble(5, producto.getPrecioCosto());
+            ps.setDouble(6, producto.getPrecioPublico());
             ps.setInt(7, producto.getEstrella());
 
             ps.executeUpdate();
@@ -48,8 +47,8 @@ public class ProductoData {
             ps.close();
             //con.close();
 
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al guardar producto");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al guardar producto: " + ex);
         }
 
     }
@@ -68,33 +67,34 @@ public class ProductoData {
             JOptionPane.showMessageDialog(null, "Error al eliminar Producto");
         }
     }
-     public Producto buscarProducto(int idProducto) {
+     public Producto buscarProducto(int codigoProducto) {
         Producto producto = null;
-        String sql = "SELECT * FROM producto WHERE idProducto = ?";
+        String sql = "SELECT * FROM producto WHERE codigo = ?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, idProducto);
+            ps.setInt(1, codigoProducto);
 
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
                 JOptionPane.showMessageDialog(null, "PRODUCTO ENCONTRADO");
                 producto = new Producto();
-                ps.setLong(1, producto.getCodigo());
-                ps.setString(2, producto.getNombreProducto());
-                ps.setString(3, producto.getDescripcion());
-                ps.setInt(4, producto.getTamanio());
-                ps.setFloat(5, producto.getPrecioCosto());
-                ps.setFloat(6, producto.getPrecioPublico());
-                ps.setInt(7, producto.getEstrella());
+                producto.setIdProducto(rs.getInt("idProducto"));
+                producto.setCodigo(rs.getLong("codigo"));
+                producto.setNombreProducto(rs.getString("nombreProducto"));
+                producto.setDescripcion(rs.getString("descripcion"));
+                producto.setPrecioCosto(rs.getDouble("precioCosto"));
+                producto.setPrecioPublico(rs.getDouble("precioPublico"));
+                producto.setTamanio(rs.getInt("tamanio"));
+                producto.setEstrella(rs.getInt("estrellas"));
             }
             else{JOptionPane.showMessageDialog(null, "NO SE ENCONTRO EL PRODUCTO CON DICHO ID");}
             ps.close();
             rs.close();
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "NO SE ENCONTRO EL PRODUCTO CON DICHO ID");
+            JOptionPane.showMessageDialog(null, "ERROR EXCEPCION");
         }
 
         return producto;
@@ -112,16 +112,18 @@ public class ProductoData {
             JOptionPane.showMessageDialog(null, "PRODUCTOS ENCONTRADOS:");
             while (rs.next()) {
                 producto = new Producto();
-                ps.setLong(1, producto.getCodigo());
-                ps.setString(2, producto.getNombreProducto());
-                ps.setString(3, producto.getDescripcion());
-                ps.setInt(4, producto.getTamanio());
-                ps.setFloat(5, producto.getPrecioCosto());
-                ps.setFloat(6, producto.getPrecioPublico());
-                ps.setInt(7, producto.getEstrella());
+                producto.setIdProducto(rs.getInt("idProducto"));
+                producto.setCodigo(rs.getLong("codigo"));
+                producto.setNombreProducto(rs.getString("nombreProducto"));
+                producto.setDescripcion(rs.getString("descripcion"));
+                producto.setPrecioCosto(rs.getDouble("precioCosto"));
+                producto.setPrecioPublico(rs.getDouble("precioPublico"));
+                producto.setTamanio(rs.getInt("tamanio"));
+                producto.setEstrella(rs.getInt("estrellas"));
                 productos.add(producto);
             }
             ps.close();
+            rs.close();
 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "ERROR DE TIPO: " + ex);
@@ -130,7 +132,7 @@ public class ProductoData {
         return productos;
     }
      public void actualizarProducto(Producto producto){
-        String sql= "UPDATE producto SET codigo=? ,nombreProducto=?,descripcion=?,tamanio=?,precioCosto=?,precioPublico=?,estrella=? WHERE producto.idProducto = ?";
+        String sql= "UPDATE producto SET codigo=? ,nombreProducto=?,descripcion=?,tamanio=?,precioCosto=?,precioPublico=?,estrellas=? WHERE producto.idProducto = ?";
         
         
         try {
@@ -140,8 +142,8 @@ public class ProductoData {
                 ps.setString(2, producto.getNombreProducto());
                 ps.setString(3, producto.getDescripcion());
                 ps.setInt(4, producto.getTamanio());
-                ps.setFloat(5, producto.getPrecioCosto());
-                ps.setFloat(6, producto.getPrecioPublico());
+                ps.setDouble(5, producto.getPrecioCosto());
+                ps.setDouble(6, producto.getPrecioPublico());
                 ps.setInt(7, producto.getEstrella());
                 ps.setInt(8, producto.getIdProducto());
             
@@ -154,7 +156,7 @@ public class ProductoData {
             
             
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "" + ex);
+            JOptionPane.showMessageDialog(null, "Error de tipo: " + ex);
         }
 }
 }

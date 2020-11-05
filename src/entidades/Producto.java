@@ -10,14 +10,14 @@ public class Producto {
     private String nombreProducto;
     private String descripcion;
     private int tamanio;
-    private float precioCosto;
-    private float precioPublico;
+    private double precioCosto;
+    private double precioPublico;
     private int estrella;
 
     public Producto() {
     }
 
-    public Producto(int idProducto, long codigo, String nombreProducto, String descripcion, int tamanio, float precioCosto, float precioPublico, int estrella) {
+    public Producto(int idProducto, long codigo, String nombreProducto, String descripcion, int tamanio, double precioCosto, double precioPublico, int estrella) {
         this.idProducto = idProducto;
         this.codigo = codigo;
         this.nombreProducto = nombreProducto;
@@ -28,7 +28,7 @@ public class Producto {
         this.estrella = estrella;
     }
 
-    public Producto(long codigo, String nombreProducto, String descripcion, int tamanio, float precioCosto, float precioPublico, int estrella) {
+    public Producto(long codigo, String nombreProducto, String descripcion, int tamanio, double precioCosto, double precioPublico, int estrella) {
         this.codigo = codigo;
         this.nombreProducto = nombreProducto;
         this.descripcion = descripcion;
@@ -78,19 +78,19 @@ public class Producto {
         this.tamanio = tamanio;
     }
 
-    public float getPrecioCosto() {
+    public double getPrecioCosto() {
         return precioCosto;
     }
 
-    public void setPrecioCosto(float precioCosto) {
+    public void setPrecioCosto(double precioCosto) {
         this.precioCosto = precioCosto;
     }
 
-    public float getPrecioPublico() {
+    public double getPrecioPublico() {
         return precioPublico;
     }
 
-    public void setPrecioPublico(float precioPublico) {
+    public void setPrecioPublico(double precioPublico) {
         this.precioPublico = precioPublico;
     }
 
