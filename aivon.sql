@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-11-2020 a las 15:39:43
+-- Tiempo de generación: 08-11-2020 a las 10:21:09
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.10
 
@@ -33,7 +33,8 @@ CREATE TABLE `campaña` (
   `fechaFinal` date NOT NULL,
   `montoMin` float NOT NULL,
   `montoTope` float NOT NULL,
-  `estrellasXCampaña` int(11) NOT NULL
+  `estrellasXCampaña` int(11) NOT NULL,
+  `estadoCampaña` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -92,14 +93,24 @@ CREATE TABLE `pedido` (
 
 CREATE TABLE `producto` (
   `idProducto` int(11) NOT NULL,
-  `codigo` bigint(8) UNSIGNED ZEROFILL NOT NULL,
+  `codigo` bigint(5) UNSIGNED ZEROFILL NOT NULL,
   `nombreProducto` varchar(25) NOT NULL,
   `descripcion` varchar(100) NOT NULL,
   `tamanio` int(11) NOT NULL,
-  `precioCosto` float NOT NULL,
-  `precioPublico` float NOT NULL,
+  `precioCosto` double NOT NULL,
+  `precioPublico` double NOT NULL,
   `estrellas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`idProducto`, `codigo`, `nombreProducto`, `descripcion`, `tamanio`, `precioCosto`, `precioPublico`, `estrellas`) VALUES
+(1, 00111, 'Crema Aivon', 'crema para manos extra suave con extraco de vainilla y coco', 375, 38.5, 52.5, 5),
+(2, 00112, 'Crema Aivon Piel reseca', 'crema con otra cosa', 375, 40.5, 55.5, 7),
+(4, 00113, 'Desodorante Aivon', 'Anti transpirante de uso diario', 75, 68, 80, 11),
+(5, 00114, 'Desodorante Rollon Aivon', 'Anti transpirante de uso diario con sistema rollon', 50, 65, 78, 10);
 
 -- --------------------------------------------------------
 
@@ -114,7 +125,8 @@ CREATE TABLE `revendedor` (
   `apellidoRevendedor` varchar(25) NOT NULL,
   `telefono` bigint(20) NOT NULL,
   `mail` varchar(25) NOT NULL,
-  `activo` tinyint(1) NOT NULL
+  `activo` tinyint(1) NOT NULL,
+  `nivel` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -197,7 +209,7 @@ ALTER TABLE `pedido`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `revendedor`
