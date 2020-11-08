@@ -12,32 +12,43 @@ import java.time.LocalDate;
  * @author Fran Gonzalez
  */
 public class Campaña {
-    
+
     private int idCampaña;
     private LocalDate fechaInicio;
     private LocalDate fechaFinal;
     private float montoMin;
     private float montoTope;
     private int estrellasXCampaña;
+    private boolean estadoCamapaña;
 
     public Campaña() {
     }
 
-    public Campaña(int idCampaña, LocalDate fechaInicio, LocalDate fechaFinal, float montoMin, float montoTope, int estrellasXCampaña) {
+    public Campaña(int idCampaña, LocalDate fechaInicio, LocalDate fechaFinal, float montoMin, float montoTope, int estrellasXCampaña, boolean estadoCamapaña) {
         this.idCampaña = idCampaña;
         this.fechaInicio = fechaInicio;
         this.fechaFinal = fechaFinal;
         this.montoMin = montoMin;
         this.montoTope = montoTope;
         this.estrellasXCampaña = estrellasXCampaña;
+        this.estadoCamapaña = estadoCamapaña;
     }
 
-    public Campaña(LocalDate fechaInicio, LocalDate fechaFinal, float montoMin, float montoTope, int estrellasXCampaña) {
+    public Campaña(LocalDate fechaInicio, LocalDate fechaFinal, float montoMin, float montoTope, int estrellasXCampaña, boolean estadoCamapaña) {
         this.fechaInicio = fechaInicio;
         this.fechaFinal = fechaFinal;
         this.montoMin = montoMin;
         this.montoTope = montoTope;
         this.estrellasXCampaña = estrellasXCampaña;
+        this.estadoCamapaña = estadoCamapaña;
+    }
+
+    public boolean isEstadoCamapaña() {
+        return estadoCamapaña;
+    }
+
+    public void setEstadoCamapaña(boolean estadoCamapaña) {
+        this.estadoCamapaña = estadoCamapaña;
     }
 
     public int getIdCampaña() {
@@ -87,7 +98,5 @@ public class Campaña {
     public void setEstrellasXCampaña(int estrellasXCampaña) {
         this.estrellasXCampaña = estrellasXCampaña;
     }
-    
-    
-    
+
 }

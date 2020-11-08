@@ -34,9 +34,9 @@ public class Conexion {
                 Class.forName("org.mariadb.jdbc.Driver");
                 con = (Connection)DriverManager.getConnection(url, user, pass);
             }
-            catch (SQLException |ClassNotFoundException e)
+            catch (SQLException |ClassNotFoundException ex)
             {
-                JOptionPane.showMessageDialog(null, "Error al conectarse");
+                JOptionPane.showMessageDialog(null, "Error: " + ex);
             }
         }
                 return con;

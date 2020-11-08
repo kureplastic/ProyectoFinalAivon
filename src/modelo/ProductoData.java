@@ -52,7 +52,7 @@ public class ProductoData {
         }
 
     }
-     public void eliminarProducto(Producto producto) {
+    public void eliminarProducto(Producto producto) {
         String sql = "DELETE FROM `producto` WHERE idProducto = ?";
         try {
 
@@ -67,7 +67,7 @@ public class ProductoData {
             JOptionPane.showMessageDialog(null, "Error al eliminar Producto");
         }
     }
-     public Producto buscarProducto(int codigoProducto) {
+    public Producto buscarProducto(int codigoProducto) {
         Producto producto = null;
         String sql = "SELECT * FROM producto WHERE codigo = ?";
 
@@ -94,12 +94,12 @@ public class ProductoData {
             rs.close();
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "ERROR EXCEPCION");
+            JOptionPane.showMessageDialog(null, "ERROR EXCEPCION: " + ex);
         }
 
         return producto;
     }
-     public List<Producto> obtenerProductos() {
+    public List<Producto> obtenerProductos() {
         Producto producto = null;
         List<Producto> productos = new ArrayList<>();
         String sql = "SELECT * FROM producto";

@@ -5,33 +5,54 @@ public class Revendedor {
    private int idRevendedor;
    private long dni;
    private String nombreRevendedor;
+   private String apellidoRevendedor;
    private long telefono;
    private String mail;
    private boolean activo;
-   private boolean estuvoEnCampaña;
+   private int nivel;
 
-    public Revendedor(int idRevendedor, long dni, String nombreRevendedor, long telefono, String mail, boolean activo, boolean estuvoEnCampaña) {
+    public Revendedor(int idRevendedor, long dni, String nombreRevendedor, String apellidoRevendedor, long telefono, String mail, boolean activo, int nivel) {
         this.idRevendedor = idRevendedor;
         this.dni = dni;
         this.nombreRevendedor = nombreRevendedor;
+        this.apellidoRevendedor = apellidoRevendedor;
         this.telefono = telefono;
         this.mail = mail;
         this.activo = activo;
-        this.estuvoEnCampaña = estuvoEnCampaña;
+        this.nivel = nivel;
     }
 
-    public Revendedor(long dni, String nombreRevendedor, long telefono, String mail, boolean activo, boolean estuvoEnCampaña) {
+    public Revendedor(long dni, String nombreRevendedor, String apellidoRevendedor, long telefono, String mail, boolean activo, int nivel) {
         this.dni = dni;
         this.nombreRevendedor = nombreRevendedor;
+        this.apellidoRevendedor = apellidoRevendedor;
         this.telefono = telefono;
         this.mail = mail;
         this.activo = activo;
-        this.estuvoEnCampaña = estuvoEnCampaña;
+        this.nivel = nivel;
     }
 
     public Revendedor() {
     }
 
+    public String getApellidoRevendedor() {
+        return apellidoRevendedor;
+    }
+
+    public void setApellidoRevendedor(String apellidoRevendedor) {
+        this.apellidoRevendedor = apellidoRevendedor;
+    }
+    
+    
+
+    public int getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+    
     public int getIdRevendedor() {
         return idRevendedor;
     }
@@ -80,13 +101,7 @@ public class Revendedor {
         this.activo = activo;
     }
 
-    public boolean isEstuvoEnCampaña() {
-        return estuvoEnCampaña;
-    }
-
-    public void setEstuvoEnCampaña(boolean estuvoEnCampaña) {
-        this.estuvoEnCampaña = estuvoEnCampaña;
-    }
+    
 
    
 }
