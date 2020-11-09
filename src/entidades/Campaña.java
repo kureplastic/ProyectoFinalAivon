@@ -98,6 +98,10 @@ public class Campaña {
     public void setEstrellasXCampaña(int estrellasXCampaña) {
         this.estrellasXCampaña = estrellasXCampaña;
     }
+    
+    public void ingresarFechaInicio(LocalDate fecha){
+        
+    }
 
 
 }
