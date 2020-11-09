@@ -3,10 +3,8 @@ package modelo;
 
 import entidades.Campaña;
 import entidades.HistoricoCampaña;
-import entidades.Pedido;
 import entidades.Revendedor;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -57,7 +55,7 @@ public class HistoricoCampañaData {
     }
 
     public void eliminarHistorico(HistoricoCampaña historico) {
-        String sql = "DELETE FROM `historicorc` WHERE historicorc.IdHistoricoRC = ?";
+        String sql = "DELETE FROM `historicorc` WHERE historicorc.idHistoricoRC = ?";
         try {
 
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -72,7 +70,7 @@ public class HistoricoCampañaData {
 
     public HistoricoCampaña buscarHistorico(int idHistoricoCampaña) {
         HistoricoCampaña historico = null;
-        String sql = "SELECT * FROM historicorc WHERE IdHistoricoRC = ?";
+        String sql = "SELECT * FROM historicorc WHERE idHistoricoRC = ?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -97,7 +95,7 @@ public class HistoricoCampañaData {
             rs.close();
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "ERROR EXCEPCION");
+            JOptionPane.showMessageDialog(null, "ERROR EXCEPCION: " + ex);
         }
 
         return historico;
@@ -105,7 +103,7 @@ public class HistoricoCampañaData {
     
     public void actualizarHistorico(HistoricoCampaña historico){
         String sql = "UPDATE `historicorc` SET `idCampaña`=?,idRevendedor`= ?,`estrellasRC`=?,`estadoRC`=?"
-                    + "WHERE IdHistoricoRC = ?";        
+                    + "WHERE idHistoricoRC = ?";        
         
         try {
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);

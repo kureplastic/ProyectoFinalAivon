@@ -34,13 +34,15 @@ public class Campaña {
         this.estadoCamapaña = estadoCamapaña;
     }
 
-    public Campaña(LocalDate fechaInicio, LocalDate fechaFinal, float montoMin, float montoTope, int estrellasXCampaña, boolean estadoCamapaña) {
-        this.fechaInicio = fechaInicio;
-        this.fechaFinal = fechaFinal;
+    
+
+    public Campaña(float montoMin, float montoTope, int estrellasXCampaña) {
+        this.fechaInicio = LocalDate.of(1, 1, 1991);
+        this.fechaFinal = LocalDate.of(1, 1, 1991);
         this.montoMin = montoMin;
         this.montoTope = montoTope;
         this.estrellasXCampaña = estrellasXCampaña;
-        this.estadoCamapaña = estadoCamapaña;
+        this.estadoCamapaña = false;
     }
 
     public boolean isEstadoCamapaña() {
@@ -100,7 +102,17 @@ public class Campaña {
     }
     
     public void ingresarFechaInicio(LocalDate fecha){
+        setFechaInicio(fecha);
+        setFechaFinal(fecha.plusDays(25));
         
+    }
+    
+    public void iniciarCampaña(){
+        estadoCamapaña = true;
+    }
+    
+    public void cerrarCampaña(){
+        estadoCamapaña = false;
     }
 
 
