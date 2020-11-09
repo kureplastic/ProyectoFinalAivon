@@ -42,6 +42,10 @@ public class HistoricoCampaña {
     public void setEstadoRC(boolean estadoRC) {
         this.estadoRC = estadoRC;
     }
+
+    public void setIdHistoricoCampaña(int idHistoricoCampaña) {
+        this.idHistoricoCampaña = idHistoricoCampaña;
+    }
       
     
 

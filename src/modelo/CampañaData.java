@@ -24,7 +24,7 @@ import javax.swing.JOptionPane;
  */
 public class CampañaData {
 
-    private Connection con;
+   private Connection con;
 
     public CampañaData(Conexion conexion) {
         con = conexion.getConnection();
@@ -168,5 +168,4 @@ public class CampañaData {
         }
         return campañas;
     }
-
 }

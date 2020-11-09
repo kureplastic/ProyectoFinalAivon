@@ -2,7 +2,7 @@
 package entidades;
 
 public class Revendedor {
-   private int idRevendedor;
+  private int idRevendedor;
    private long dni;
    private String nombreRevendedor;
    private String apellidoRevendedor;
@@ -101,7 +101,6 @@ public class Revendedor {
         this.activo = activo;
     }
 
-    
 
    
 }

@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 public class RevendedorData {
 
-    private Connection con;
+   private Connection con;
 
     public RevendedorData(Conexion conexion) {
         con = conexion.getConnection();
