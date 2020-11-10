@@ -48,12 +48,12 @@ public class Aivon {
         Revendedor revendedor5 = new Revendedor(28456789, "Facundo", "Perez", 154765330, "facuperez@gmail.com", true, 1);
         Revendedor revendedor6 = new Revendedor(25466789, "Leticia", "Siciliani", 154805426, "leti4321@gmail.com", true, 1);
         
-        Campaña cam1 = new Campaña(LocalDate.of(2010, Month.APRIL, 1), LocalDate.of(2010, Month.APRIL, 25), 50000, 100000, 2, true);
-        Campaña cam2 = new Campaña(LocalDate.of(2020, Month.APRIL, 4), LocalDate.of(2020, Month.APRIL, 25), 50000, 100000, 2, true);
-        Campaña cam3 = new Campaña(LocalDate.of(1994, Month.APRIL, 2), LocalDate.of(1994, Month.APRIL, 25), 50000, 100000, 2, true);
-        Campaña cam4 = new Campaña(LocalDate.of(1994, Month.APRIL, 5), LocalDate.of(1994, Month.APRIL, 25), 50000, 100000, 2, true);
-        Campaña cam5 = new Campaña(LocalDate.of(2014, Month.APRIL, 3), LocalDate.of(2014, Month.APRIL, 25), 50000, 100000, 2, true);
-        Campaña cam6 = new Campaña(LocalDate.of(2019, Month.APRIL, 1), LocalDate.of(2019, Month.APRIL, 25), 50000, 100000, 2, true);
+        Campaña cam1 = new Campaña(LocalDate.of(2010, Month.APRIL, 1), LocalDate.of(2010, Month.APRIL, 25), 5000, 10000, 2, true);
+        Campaña cam2 = new Campaña(LocalDate.of(2020, Month.APRIL, 4), LocalDate.of(2020, Month.APRIL, 25), 5000, 10000, 3, true);
+        Campaña cam3 = new Campaña(LocalDate.of(1994, Month.APRIL, 2), LocalDate.of(1994, Month.APRIL, 25), 4000, 8000, 1, true);
+        Campaña cam4 = new Campaña(LocalDate.of(1994, Month.APRIL, 5), LocalDate.of(1994, Month.APRIL, 25), 7000, 10000, 4, true);
+        Campaña cam5 = new Campaña(LocalDate.of(2014, Month.APRIL, 3), LocalDate.of(2014, Month.APRIL, 25), 50000, 100000, 4, true);
+        Campaña cam6 = new Campaña(LocalDate.of(2019, Month.APRIL, 1), LocalDate.of(2019, Month.APRIL, 25), 50000, 100000, 3, true);
         
         Pedido pedido1 = new Pedido(cam1, revendedor6, LocalDate.of(1994, Month.APRIL, 1), LocalDate.of(1994, Month.APRIL, 15), LocalDate.of(1994, Month.APRIL, 2), 2, 10000, 2, true);
         Pedido pedido2 = new Pedido(cam2, revendedor5, LocalDate.of(1994, Month.APRIL, 1), LocalDate.of(1994, Month.APRIL, 15), LocalDate.of(1994, Month.APRIL, 2), 2, 10000, 2, true);
@@ -96,7 +96,7 @@ public class Aivon {
         campañaData1.guardarCampaña(cam1);
         campañaData1.guardarCampaña(cam2);
         campañaData1.guardarCampaña(cam3);
-        campañaData1.guardarCampaña(cam4);
+        campañaData1.guardarCampaña(cam4);              
         campañaData1.guardarCampaña(cam5);
         campañaData1.guardarCampaña(cam6);
         
