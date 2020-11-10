@@ -41,12 +41,12 @@ public class Aivon {
         Producto prod5 = new Producto(118, "Toalla Turbo", "Toalla de secado rapido", 90, 200.0, 300.0, 19);
         Producto prod6 = new Producto(119, "Colonia Mosku", "Colonia de uso masculino importada de rusia", 50, 800.0, 1000.0, 100);
         
-        Revendedor revendedor1 = new Revendedor(25456789, "Maria", "Fuentes", 2664765326, "marifuentes21@gmail.com", true, 1);
-        Revendedor revendedor2 = new Revendedor(25456730, "Vanina", "Fuentes", 2664766026, "vaninafuentes@gmail.com", true, 1);
-        Revendedor revendedor3 = new Revendedor(23456789, "Eduardo", "Funes", 2664275326, "eduardofunes@gmail.com", true, 1);
-        Revendedor revendedor4 = new Revendedor(21456789, "Carmen", "Morales", 2664768026, "carmenmorales43@gmail.com", true, 1);
-        Revendedor revendedor5 = new Revendedor(28456789, "Facundo", "Perez", 2664765330, "facuperez@gmail.com", true, 1);
-        Revendedor revendedor6 = new Revendedor(25466789, "Leticia", "Siciliani", 2664805426, "leti4321@gmail.com", true, 1);
+        Revendedor revendedor1 = new Revendedor(25456789, "Maria", "Fuentes", 154765326, "marifuentes21@gmail.com", true, 1);
+        Revendedor revendedor2 = new Revendedor(25456730, "Vanina", "Fuentes", 154766026, "vaninafuentes@gmail.com", true, 1);
+        Revendedor revendedor3 = new Revendedor(23456789, "Eduardo", "Funes", 154275326, "eduardofunes@gmail.com", true, 1);
+        Revendedor revendedor4 = new Revendedor(21456789, "Carmen", "Morales", 154768026, "carmenmorales43@gmail.com", true, 1);
+        Revendedor revendedor5 = new Revendedor(28456789, "Facundo", "Perez", 154765330, "facuperez@gmail.com", true, 1);
+        Revendedor revendedor6 = new Revendedor(25466789, "Leticia", "Siciliani", 154805426, "leti4321@gmail.com", true, 1);
         
         Campaña cam1 = new Campaña(LocalDate.of(2010, Month.APRIL, 1), LocalDate.of(2010, Month.APRIL, 25), 50000, 100000, 2, true);
         Campaña cam2 = new Campaña(LocalDate.of(2020, Month.APRIL, 4), LocalDate.of(2020, Month.APRIL, 25), 50000, 100000, 2, true);

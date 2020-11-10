@@ -22,17 +22,19 @@ public class Revendedor {
         this.nivel = nivel;
     }
 
-    
-
-    public Revendedor(long dni, String nombreRevendedor, String apellidoRevendedor, long telefono, String mail) {
+    public Revendedor(long dni, String nombreRevendedor, String apellidoRevendedor, long telefono, String mail, boolean activo, int nivel) {
         this.dni = dni;
         this.nombreRevendedor = nombreRevendedor;
         this.apellidoRevendedor = apellidoRevendedor;
         this.telefono = telefono;
         this.mail = mail;
-        this.activo = true;
-        this.nivel = 1;
+        this.activo = activo;
+        this.nivel = nivel;
     }
+
+    
+
+   
 
     public Revendedor() {
     }
