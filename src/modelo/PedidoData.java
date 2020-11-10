@@ -1,6 +1,7 @@
 package modelo;
 
 import entidades.Campaña;
+import entidades.DetallePedido;
 import entidades.Pedido;
 import entidades.Revendedor;
 import java.sql.Connection;
@@ -109,11 +110,11 @@ public class PedidoData {
 
         return pedido;
     }
-    
-    public void actualizarPedido(Pedido pedido){
+
+    public void actualizarPedido(Pedido pedido) {
         String sql = "UPDATE `pedido` SET `idRevendedor`= ?,`idCampaña`=?,`fechaIngreso`=?,`fechaEntrega`=?,`fechaPago`=?,`cantCajas`=?,`importeTotal`=?,`estrellasXPedido`=?,`estadoPedido`=?"
-                    + "WHERE idPedido = ?";        
-        
+                + "WHERE idPedido = ?";
+
         try {
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, pedido.getRevendedor().getIdRevendedor());
@@ -189,5 +190,93 @@ public class PedidoData {
         return rd.buscarRevendedor(dni);
     }
 
+    public List<Pedido> obtenerPedidosXCampaña(Campaña campaña) {
+        Pedido pedido = null;
+        List<Pedido> pedidos = new ArrayList<>();
+
+        String sql = "SELECT * FROM pedido where idCampaña = ?";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, campaña.getIdCampaña());
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "PEDIDOS ENCONTRADOS");
+                while (rs.next()) {
+                    pedido = new Pedido();
+                    pedido.setIdPedido(rs.getInt("idPedido"));
+                    pedido.setCampaña(traerCampaña(rs.getInt("idCampaña")));
+                    pedido.setRevendedor(traerRevendedor(rs.getInt("dni")));
+                    pedido.setFechaIngreso(rs.getDate("fechaIngreso").toLocalDate());
+                    pedido.setFechaEntrega(rs.getDate("fechaEntrega").toLocalDate());
+                    pedido.setFechaPago(rs.getDate("fechaPago").toLocalDate());
+                    pedido.setCantCajas(rs.getInt("cantCajas"));
+                    pedido.setImporteTotal(rs.getFloat("importeTotal"));
+                    pedido.setEstrellaXpedido(rs.getInt("estrellasXPedido"));
+                    pedido.setEstadoPedido(rs.getBoolean("estadoPedido"));
+
+                    pedidos.add(pedido);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "NO SE ENCONTRARON PEDIDOS EN DICHA CAMPAÑA");
+            }
+            ps.close();
+            rs.close();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "ERROR DE TIPO: " + ex);
+        }
+
+        return pedidos;
+
+    }
+
+    public Pedido sumarEstrellas(Pedido pedido) {
+        Pedido p = pedido;
+        Conexion c = new Conexion();
+        c.getConnection();
+        detallePedidoData dP = new detallePedidoData(c);
+        List<DetallePedido> detalles = new ArrayList<>();
+        int sum = 0;
+
+        detalles = dP.obtenerDetallesXPedido(pedido);
+        for (DetallePedido d : detalles) {
+            sum += d.getEstrellasTotales();
+        }
+        p.setEstrellaXpedido(sum);
+
+        return p;
+    }
+
+    public void verificarObjetivos(Campaña campaña) {
+        List<Pedido> pedidos = new ArrayList<>();
+        Conexion c = new Conexion();
+        c.getConnection();
+        RevendedorData rd = new RevendedorData(c);
+
+        pedidos = obtenerPedidosXCampaña(campaña);
+
+        for (Pedido pedido : pedidos) {
+            if ((pedido.getEstrellaXpedido() >= 50) || pedido.getImporteTotal() >= campaña.getMontoTope()) {
+                pedido.getRevendedor().subirNivel();
+                rd.actualizarRevendedor(pedido.getRevendedor());
+            }
+        }
+        JOptionPane.showMessageDialog(null, "SE HAN VERIFICADO LOS OBJETIVOS DE LA CAMPAÑA EN CADA REVENDEDOR");
+    }
+
+    public void cerrarCampaña(Campaña campaña) {
+        Campaña camp = campaña;
+        Conexion c = new Conexion();
+        c.getConnection();
+        CampañaData cd = new CampañaData(c);
+
+        campaña.cerrarCampaña();
+        cd.actualizarCampaña(camp);
+        verificarObjetivos(campaña);
+        JOptionPane.showMessageDialog(null, "SE HA CERRADO LA CAMPAÑA");
+    }
 
 }
