@@ -76,9 +76,58 @@ public class Aivon {
         HistoricoCampaña HC5 = new HistoricoCampaña(cam5, revendedor2, 2, true);
         HistoricoCampaña HC6 = new HistoricoCampaña(cam6, revendedor1, 1, true);
         
-        //System.out.println(prData1.buscarProducto(114).getDescripcion());       //buscar producto antes de actualizar
-        //prData1.actualizarProducto(prod1);                                    //actualizar producto 
-        //System.out.println(prData1.buscarProducto(1).getDescripcion());       //buscar producto despues de actualizar
+        
+        prData1.guardarProducto(prod1);
+        prData1.guardarProducto(prod2);
+        prData1.guardarProducto(prod3);
+        prData1.guardarProducto(prod4);
+        prData1.guardarProducto(prod5);
+        prData1.guardarProducto(prod6);
+        
+        
+        revendedorData1.guardarRevendedor(revendedor1);
+        revendedorData1.guardarRevendedor(revendedor2);
+        revendedorData1.guardarRevendedor(revendedor3);
+        revendedorData1.guardarRevendedor(revendedor4);
+        revendedorData1.guardarRevendedor(revendedor5);
+        revendedorData1.guardarRevendedor(revendedor6);
+        
+        
+        campañaData1.guardarCampaña(cam1);
+        campañaData1.guardarCampaña(cam2);
+        campañaData1.guardarCampaña(cam3);
+        campañaData1.guardarCampaña(cam4);
+        campañaData1.guardarCampaña(cam5);
+        campañaData1.guardarCampaña(cam6);
+        
+        
+        pedidoData1.guardarPedido(pedido1);
+        pedidoData1.guardarPedido(pedido2);
+        pedidoData1.guardarPedido(pedido3);
+        pedidoData1.guardarPedido(pedido4);
+        pedidoData1.guardarPedido(pedido5);
+        pedidoData1.guardarPedido(pedido6);
+        
+        
+        historicoData1.guardarHistorico(HC1);
+        historicoData1.guardarHistorico(HC2);
+        historicoData1.guardarHistorico(HC3);
+        historicoData1.guardarHistorico(HC4);
+        historicoData1.guardarHistorico(HC5);
+        historicoData1.guardarHistorico(HC6);
+        
+        
+        detalleData1.guardarDetalle(detalle1);
+        detalleData1.guardarDetalle(detalle2);
+        detalleData1.guardarDetalle(detalle3);
+        detalleData1.guardarDetalle(detalle4);
+        detalleData1.guardarDetalle(detalle5);
+        detalleData1.guardarDetalle(detalle6);
+        
+        System.out.println(prData1.buscarProducto(114).getDescripcion());       //buscar producto antes de actualizar
+        prData1.actualizarProducto(prod1);                                    //actualizar producto 
+        System.out.println(prData1.buscarProducto(1).getDescripcion());       //buscar producto despues de actualizar
+        
         
         
     }
