@@ -34,7 +34,7 @@ public class Aivon {
         detallePedidoData detalleData1 = new detallePedidoData(c);
                 
         
-        Producto prod1 = new Producto(114, "Desodorante Rollon Aivon", "Anti transpirante de uso diario con sistema rollon", 50, 65.0, 78.0, 10);
+        /*Producto prod1 = new Producto(114, "Desodorante Rollon Aivon", "Anti transpirante de uso diario con sistema rollon", 50, 65.0, 78.0, 10);
         Producto prod2 = new Producto(115, "Crema Corporal De Miel", "Crema corporal de uso femenino con aroma a miel", 75, 100.0, 150.0, 15);
         Producto prod3 = new Producto(116, "Desodorante Antitranspirante", "Anti transpirante de uso diario con Proteccion 48hs", 50, 70.0, 80.0, 12);
         Producto prod4 = new Producto(117, "Labial Protect", "Labial de color transparante para la sequedad", 10, 80.0, 90.0, 10);
@@ -123,6 +123,8 @@ public class Aivon {
         detalleData1.guardarDetalle(detalle4);
         detalleData1.guardarDetalle(detalle5);
         detalleData1.guardarDetalle(detalle6);
+
+        */
         
         System.out.println(prData1.buscarProducto(114).getDescripcion());       //buscar producto antes de actualizar
         prData1.actualizarProducto(prod1);                                    //actualizar producto 
