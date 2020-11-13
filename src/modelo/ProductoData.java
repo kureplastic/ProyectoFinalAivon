@@ -1,4 +1,3 @@
-
 package modelo;
 
 import entidades.Producto;
@@ -131,7 +130,7 @@ public class ProductoData {
 
         return productos;
     }
-    public void actualizarProducto(Producto producto){
+     public void actualizarProducto(Producto producto){
         String sql= "UPDATE producto SET codigo=? ,nombreProducto=?,descripcion=?,tamanio=?,precioCosto=?,precioPublico=?,estrellas=? WHERE producto.idProducto = ?";
         
         
