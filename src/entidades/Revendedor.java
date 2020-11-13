@@ -1,4 +1,3 @@
-
 package entidades;
 
 public class Revendedor {
@@ -22,19 +21,17 @@ public class Revendedor {
         this.nivel = nivel;
     }
 
-    public Revendedor(long dni, String nombreRevendedor, String apellidoRevendedor, long telefono, String mail, boolean activo, int nivel) {
+    
+
+    public Revendedor(long dni, String nombreRevendedor, String apellidoRevendedor, long telefono, String mail) {
         this.dni = dni;
         this.nombreRevendedor = nombreRevendedor;
         this.apellidoRevendedor = apellidoRevendedor;
         this.telefono = telefono;
         this.mail = mail;
-        this.activo = activo;
-        this.nivel = nivel;
+        this.activo = true;
+        this.nivel = 1;
     }
-
-    
-
-   
 
     public Revendedor() {
     }
