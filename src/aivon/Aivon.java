@@ -127,7 +127,7 @@ public class Aivon {
         */
         
         System.out.println(prData1.buscarProducto(114).getDescripcion());       //buscar producto antes de actualizar
-        prData1.actualizarProducto(prod1);                                    //actualizar producto 
+        //prData1.actualizarProducto(prod1);                                    //actualizar producto 
         System.out.println(prData1.buscarProducto(1).getDescripcion());       //buscar producto despues de actualizar
         
         
