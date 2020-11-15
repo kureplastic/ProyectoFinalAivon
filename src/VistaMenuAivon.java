@@ -82,6 +82,11 @@ public class VistaMenuAivon extends javax.swing.JFrame {
         jmb_MenuAivon.add(jmb_Campañas);
 
         jm_Pedido.setText("Pedidos");
+        jm_Pedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jm_PedidoActionPerformed(evt);
+            }
+        });
 
         jmi_Pedido.setText("Pedido");
         jm_Pedido.add(jmi_Pedido);
@@ -120,6 +125,10 @@ public class VistaMenuAivon extends javax.swing.JFrame {
     private void jmi_CampañasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_CampañasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jmi_CampañasActionPerformed
+
+    private void jm_PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_PedidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jm_PedidoActionPerformed
 
     /**
      * @param args the command line arguments
