@@ -8,7 +8,7 @@
  *
  * @author Usuario
  */
-public class VistaCampaña extends javax.swing.JFrame {
+public class VistaCampaña extends javax.swing.JPanel {
 
     /**
      * Creates new form VistaCampaña
@@ -26,177 +26,151 @@ public class VistaCampaña extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jl_Titulo = new javax.swing.JLabel();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        jl_TituloCampaña = new javax.swing.JLabel();
         jl_IdCampaña = new javax.swing.JLabel();
         jl_FechaInicio = new javax.swing.JLabel();
         jl_FechaFinal = new javax.swing.JLabel();
         jl_MontoMinimo = new javax.swing.JLabel();
-        jl_MohtoMaximo = new javax.swing.JLabel();
+        jl_MontoMaximo = new javax.swing.JLabel();
         jl_EstrellaPorCampaña = new javax.swing.JLabel();
         jtf_IdCampaña = new javax.swing.JTextField();
         jtf_FechaInicio = new javax.swing.JTextField();
         jtf_FechaFinal = new javax.swing.JTextField();
         jtf_MontoMinimo = new javax.swing.JTextField();
         jtf_MontoMaximo = new javax.swing.JTextField();
-        jtf_EstrellaPorCampaña = new javax.swing.JTextField();
+        jtf_EstrellasPorCampaña = new javax.swing.JTextField();
         jb_Buscar = new javax.swing.JButton();
         jb_Cargar = new javax.swing.JButton();
+        jb_Borrar = new javax.swing.JButton();
         jb_Actualizar = new javax.swing.JButton();
-        jb_Limpiar = new javax.swing.JButton();
-        jb_Borra = new javax.swing.JButton();
         jb_Listar = new javax.swing.JButton();
+        jb_Limpiar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jInternalFrame1.setClosable(true);
+        jInternalFrame1.setIconifiable(true);
+        jInternalFrame1.setMaximizable(true);
+        jInternalFrame1.setVisible(true);
 
-        jl_Titulo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jl_Titulo.setForeground(new java.awt.Color(0, 0, 255));
-        jl_Titulo.setText("-Camapaña-");
+        jl_TituloCampaña.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jl_TituloCampaña.setForeground(new java.awt.Color(0, 0, 255));
+        jl_TituloCampaña.setText("-Campaña-");
 
         jl_IdCampaña.setText("Id Campaña");
 
-        jl_FechaInicio.setText("Fecha Inicio");
+        jl_FechaInicio.setText("Fecha Inicio ");
 
-        jl_FechaFinal.setText("Fecha Final ");
+        jl_FechaFinal.setText("Fecha Final");
 
         jl_MontoMinimo.setText("Monto Minimo");
 
-        jl_MohtoMaximo.setText("Monto Maximo");
+        jl_MontoMaximo.setText("Monto Maximo");
 
-        jl_EstrellaPorCampaña.setText("Estrella Por Campaña");
-
-        jtf_FechaFinal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtf_FechaFinalActionPerformed(evt);
-            }
-        });
+        jl_EstrellaPorCampaña.setText("Estrellas Por Camapaña");
 
         jb_Buscar.setText("Buscar");
 
         jb_Cargar.setText("Cargar");
 
+        jb_Borrar.setText("Borrar");
+
         jb_Actualizar.setText("Actualizar");
-
-        jb_Limpiar.setText("Limpiar");
-
-        jb_Borra.setText("Borrar");
 
         jb_Listar.setText("Listar");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jl_IdCampaña)
-                    .addComponent(jl_FechaInicio)
-                    .addComponent(jl_FechaFinal)
-                    .addComponent(jl_MontoMinimo)
-                    .addComponent(jl_MohtoMaximo)
-                    .addComponent(jl_EstrellaPorCampaña))
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jl_Titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jtf_IdCampaña)
-                    .addComponent(jtf_FechaInicio)
-                    .addComponent(jtf_FechaFinal)
-                    .addComponent(jtf_MontoMinimo)
-                    .addComponent(jtf_MontoMaximo)
-                    .addComponent(jtf_EstrellaPorCampaña))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jb_Buscar, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jb_Borra, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jb_Cargar, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jb_Listar, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jb_Actualizar, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jb_Limpiar, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(29, 29, 29))
+        jb_Limpiar.setText("Limpiar");
+
+        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
+        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
+        jInternalFrame1Layout.setHorizontalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addGap(228, 228, 228)
+                        .addComponent(jl_TituloCampaña))
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jl_IdCampaña)
+                            .addComponent(jl_FechaInicio)
+                            .addComponent(jl_FechaFinal)
+                            .addComponent(jl_MontoMinimo)
+                            .addComponent(jl_MontoMaximo)
+                            .addComponent(jl_EstrellaPorCampaña))
+                        .addGap(45, 45, 45)
+                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtf_IdCampaña)
+                            .addComponent(jtf_FechaInicio)
+                            .addComponent(jtf_FechaFinal)
+                            .addComponent(jtf_MontoMinimo)
+                            .addComponent(jtf_MontoMaximo)
+                            .addComponent(jtf_EstrellasPorCampaña))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jb_Buscar)
+                    .addComponent(jb_Cargar)
+                    .addComponent(jb_Borrar)
+                    .addComponent(jb_Actualizar)
+                    .addComponent(jb_Listar)
+                    .addComponent(jb_Limpiar))
+                .addGap(63, 63, 63))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        jInternalFrame1Layout.setVerticalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jl_Titulo)
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jl_TituloCampaña)
+                .addGap(14, 14, 14)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_IdCampaña)
                     .addComponent(jtf_IdCampaña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jb_Buscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_FechaInicio)
                     .addComponent(jtf_FechaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jb_Borra))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_FechaFinal)
-                    .addComponent(jtf_FechaFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jb_Actualizar))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_MontoMinimo)
-                    .addComponent(jtf_MontoMinimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jb_Cargar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_MohtoMaximo)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_FechaFinal)
+                    .addComponent(jtf_FechaFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_Borrar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_MontoMinimo)
+                    .addComponent(jtf_MontoMinimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_Actualizar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_MontoMaximo)
                     .addComponent(jtf_MontoMaximo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jb_Listar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_EstrellaPorCampaña)
-                    .addComponent(jtf_EstrellaPorCampaña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtf_EstrellasPorCampaña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jb_Limpiar))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
-        pack();
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jInternalFrame1)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jInternalFrame1)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jtf_FechaFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_FechaFinalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtf_FechaFinalActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaCampaña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaCampaña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaCampaña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaCampaña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VistaCampaña().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JButton jb_Actualizar;
-    private javax.swing.JButton jb_Borra;
+    private javax.swing.JButton jb_Borrar;
     private javax.swing.JButton jb_Buscar;
     private javax.swing.JButton jb_Cargar;
     private javax.swing.JButton jb_Limpiar;
@@ -205,10 +179,10 @@ public class VistaCampaña extends javax.swing.JFrame {
     private javax.swing.JLabel jl_FechaFinal;
     private javax.swing.JLabel jl_FechaInicio;
     private javax.swing.JLabel jl_IdCampaña;
-    private javax.swing.JLabel jl_MohtoMaximo;
+    private javax.swing.JLabel jl_MontoMaximo;
     private javax.swing.JLabel jl_MontoMinimo;
-    private javax.swing.JLabel jl_Titulo;
-    private javax.swing.JTextField jtf_EstrellaPorCampaña;
+    private javax.swing.JLabel jl_TituloCampaña;
+    private javax.swing.JTextField jtf_EstrellasPorCampaña;
     private javax.swing.JTextField jtf_FechaFinal;
     private javax.swing.JTextField jtf_FechaInicio;
     private javax.swing.JTextField jtf_IdCampaña;

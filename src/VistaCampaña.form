@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
-  </Properties>
-  <SyntheticProperties>
-    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
-  </SyntheticProperties>
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -23,171 +16,198 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jl_IdCampaña" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jl_FechaInicio" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jl_FechaFinal" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jl_MontoMinimo" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jl_MohtoMaximo" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jl_EstrellaPorCampaña" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jl_Titulo" max="32767" attributes="0"/>
-                  <Component id="jtf_IdCampaña" max="32767" attributes="0"/>
-                  <Component id="jtf_FechaInicio" max="32767" attributes="0"/>
-                  <Component id="jtf_FechaFinal" max="32767" attributes="0"/>
-                  <Component id="jtf_MontoMinimo" max="32767" attributes="0"/>
-                  <Component id="jtf_MontoMaximo" max="32767" attributes="0"/>
-                  <Component id="jtf_EstrellaPorCampaña" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace pref="66" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jb_Buscar" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jb_Borra" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jb_Cargar" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jb_Listar" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jb_Actualizar" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jb_Limpiar" alignment="1" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-          </Group>
+          <Component id="jInternalFrame1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jl_Titulo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jl_IdCampaña" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jtf_IdCampaña" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jb_Buscar" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jl_FechaInicio" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jtf_FechaInicio" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jb_Borra" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jl_FechaFinal" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jtf_FechaFinal" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jb_Actualizar" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jl_MontoMinimo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jtf_MontoMinimo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jb_Cargar" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jl_MohtoMaximo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jtf_MontoMaximo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jb_Listar" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jl_EstrellaPorCampaña" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jtf_EstrellaPorCampaña" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jb_Limpiar" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="43" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jInternalFrame1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jl_Titulo">
+    <Container class="javax.swing.JInternalFrame" name="jInternalFrame1">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="18" style="0"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="0" red="0" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="-Camapa&#xf1;a-"/>
+        <Property name="closable" type="boolean" value="true"/>
+        <Property name="iconifiable" type="boolean" value="true"/>
+        <Property name="maximizable" type="boolean" value="true"/>
+        <Property name="visible" type="boolean" value="true"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jl_IdCampa&#xf1;a">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Id Campa&#xf1;a"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jl_FechaInicio">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Fecha Inicio"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jl_FechaFinal">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Fecha Final "/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jl_MontoMinimo">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Monto Minimo"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jl_MohtoMaximo">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Monto Maximo"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jl_EstrellaPorCampa&#xf1;a">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Estrella Por Campa&#xf1;a"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jtf_IdCampa&#xf1;a">
-    </Component>
-    <Component class="javax.swing.JTextField" name="jtf_FechaInicio">
-    </Component>
-    <Component class="javax.swing.JTextField" name="jtf_FechaFinal">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtf_FechaFinalActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jtf_MontoMinimo">
-    </Component>
-    <Component class="javax.swing.JTextField" name="jtf_MontoMaximo">
-    </Component>
-    <Component class="javax.swing.JTextField" name="jtf_EstrellaPorCampa&#xf1;a">
-    </Component>
-    <Component class="javax.swing.JButton" name="jb_Buscar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Buscar"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jb_Cargar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cargar"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jb_Actualizar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Actualizar"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jb_Limpiar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Limpiar"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jb_Borra">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Borrar"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jb_Listar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Listar"/>
-      </Properties>
-    </Component>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="228" max="-2" attributes="0"/>
+                          <Component id="jl_TituloCampaña" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jl_IdCampaña" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jl_FechaInicio" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jl_FechaFinal" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jl_MontoMinimo" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jl_MontoMaximo" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jl_EstrellaPorCampaña" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jtf_IdCampaña" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jtf_FechaInicio" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jtf_FechaFinal" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jtf_MontoMinimo" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jtf_MontoMaximo" max="32767" attributes="0"/>
+                              <Component id="jtf_EstrellasPorCampaña" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="74" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jb_Buscar" min="-2" max="-2" attributes="0"/>
+                      <Component id="jb_Cargar" min="-2" max="-2" attributes="0"/>
+                      <Component id="jb_Borrar" min="-2" max="-2" attributes="0"/>
+                      <Component id="jb_Actualizar" min="-2" max="-2" attributes="0"/>
+                      <Component id="jb_Listar" min="-2" max="-2" attributes="0"/>
+                      <Component id="jb_Limpiar" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jl_TituloCampaña" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jl_IdCampaña" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtf_IdCampaña" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jb_Buscar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jl_FechaInicio" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtf_FechaInicio" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jb_Cargar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jl_FechaFinal" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtf_FechaFinal" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jb_Borrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jl_MontoMinimo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtf_MontoMinimo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jb_Actualizar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jl_MontoMaximo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtf_MontoMaximo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jb_Listar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jl_EstrellaPorCampaña" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtf_EstrellasPorCampaña" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jb_Limpiar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="87" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jl_TituloCampa&#xf1;a">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="18" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="-Campa&#xf1;a-"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jl_IdCampa&#xf1;a">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Id Campa&#xf1;a"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jl_FechaInicio">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fecha Inicio "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jl_FechaFinal">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fecha Final"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jl_MontoMinimo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Monto Minimo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jl_MontoMaximo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Monto Maximo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jl_EstrellaPorCampa&#xf1;a">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Estrellas Por Camapa&#xf1;a"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtf_IdCampa&#xf1;a">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtf_FechaInicio">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtf_FechaFinal">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtf_MontoMinimo">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtf_MontoMaximo">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtf_EstrellasPorCampa&#xf1;a">
+        </Component>
+        <Component class="javax.swing.JButton" name="jb_Buscar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Buscar"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jb_Cargar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cargar"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jb_Borrar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Borrar"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jb_Actualizar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Actualizar"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jb_Listar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Listar"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jb_Limpiar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Limpiar"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>

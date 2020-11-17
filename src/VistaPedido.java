@@ -8,7 +8,7 @@
  *
  * @author Usuario
  */
-public class VistaPedido extends javax.swing.JFrame {
+public class VistaPedido extends javax.swing.JPanel {
 
     /**
      * Creates new form VistaPedido
@@ -26,26 +26,26 @@ public class VistaPedido extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jif_Pedido = new javax.swing.JInternalFrame();
-        jl_Titulo = new javax.swing.JLabel();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        jl_TituloPedido = new javax.swing.JLabel();
         jl_IdPedido = new javax.swing.JLabel();
         jl_IdRevendedor = new javax.swing.JLabel();
         jl_IdCampaña = new javax.swing.JLabel();
         jl_FechaIngreso = new javax.swing.JLabel();
+        jl_FechaEntrega = new javax.swing.JLabel();
         jl_FechaPago = new javax.swing.JLabel();
-        jl_FechaEntrga = new javax.swing.JLabel();
         jl_CantidadDeCajas = new javax.swing.JLabel();
-        jl_EstrellaPorPedido = new javax.swing.JLabel();
-        jl_EstadoPedido = new javax.swing.JLabel();
-        jtf_EstadoPedido = new javax.swing.JTextField();
-        jtf_EstrellaPorPedido = new javax.swing.JTextField();
-        jtf_CantidadDeCajas = new javax.swing.JTextField();
-        jtf_FechaPago = new javax.swing.JTextField();
-        jtf_FechaEntrega = new javax.swing.JTextField();
-        jtf_FechaIngreso = new javax.swing.JTextField();
-        jtf_IdCampaña = new javax.swing.JTextField();
-        jtf_IdRevendedor = new javax.swing.JTextField();
+        jl_EstrellaPorPedio = new javax.swing.JLabel();
+        jl_Estado = new javax.swing.JLabel();
         jtf_IdPedido = new javax.swing.JTextField();
+        jtf_IdRevendedor = new javax.swing.JTextField();
+        jtf_IdCampaña = new javax.swing.JTextField();
+        jtf_FechaIngreso = new javax.swing.JTextField();
+        jtf_FechaEntrega = new javax.swing.JTextField();
+        jtf_FechaPago = new javax.swing.JTextField();
+        jtf_CantidadDeCajas = new javax.swing.JTextField();
+        jtf_EstrellasPorPedido = new javax.swing.JTextField();
+        jtf_EstadoPedido = new javax.swing.JTextField();
         jb_Guardar = new javax.swing.JButton();
         jb_Eliminar = new javax.swing.JButton();
         jb_Buscar = new javax.swing.JButton();
@@ -53,18 +53,14 @@ public class VistaPedido extends javax.swing.JFrame {
         jb_ListarPedido = new javax.swing.JButton();
         jb_PedidosPorCampaña = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jInternalFrame1.setClosable(true);
+        jInternalFrame1.setIconifiable(true);
+        jInternalFrame1.setMaximizable(true);
+        jInternalFrame1.setVisible(true);
 
-        jif_Pedido.setClosable(true);
-        jif_Pedido.setIconifiable(true);
-        jif_Pedido.setMaximizable(true);
-        jif_Pedido.setResizable(true);
-        jif_Pedido.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jif_Pedido.setVisible(true);
-
-        jl_Titulo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jl_Titulo.setForeground(new java.awt.Color(0, 0, 255));
-        jl_Titulo.setText("-Pedido-");
+        jl_TituloPedido.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jl_TituloPedido.setForeground(new java.awt.Color(0, 0, 255));
+        jl_TituloPedido.setText("-Pedido-");
 
         jl_IdPedido.setText("Id Pedido");
 
@@ -72,17 +68,23 @@ public class VistaPedido extends javax.swing.JFrame {
 
         jl_IdCampaña.setText("Id Campaña");
 
-        jl_FechaIngreso.setText("Fecha De Ingreso");
+        jl_FechaIngreso.setText("Fecha Ingreso");
 
-        jl_FechaPago.setText("Fecha De Pago");
+        jl_FechaEntrega.setText("Fecha Entrega");
 
-        jl_FechaEntrga.setText("Fecha De Entrega");
+        jl_FechaPago.setText("Fecha Pago");
 
         jl_CantidadDeCajas.setText("Cantidad de Cajas");
 
-        jl_EstrellaPorPedido.setText("Estrella Por Pedido");
+        jl_EstrellaPorPedio.setText("Estrella Por Pedido");
 
-        jl_EstadoPedido.setText("Estado Pedido");
+        jl_Estado.setText("Estado Pedido");
+
+        jtf_EstadoPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtf_EstadoPedidoActionPerformed(evt);
+            }
+        });
 
         jb_Guardar.setText("Guardar");
 
@@ -92,178 +94,153 @@ public class VistaPedido extends javax.swing.JFrame {
 
         jb_Actualizar.setText("Actualizar");
 
-        jb_ListarPedido.setText("Lista Pedidos");
+        jb_ListarPedido.setText("Listar Pedido");
 
-        jb_PedidosPorCampaña.setText("Pedidos Por Campaña ");
+        jb_PedidosPorCampaña.setText("Pedidos Por Campaña");
 
-        javax.swing.GroupLayout jif_PedidoLayout = new javax.swing.GroupLayout(jif_Pedido.getContentPane());
-        jif_Pedido.getContentPane().setLayout(jif_PedidoLayout);
-        jif_PedidoLayout.setHorizontalGroup(
-            jif_PedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jif_PedidoLayout.createSequentialGroup()
-                .addGap(322, 322, 322)
-                .addComponent(jl_Titulo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jif_PedidoLayout.createSequentialGroup()
+        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
+        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
+        jInternalFrame1Layout.setHorizontalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jl_TituloPedido)
+                .addGap(306, 306, 306))
+            .addGroup(jInternalFrame1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jif_PedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jif_PedidoLayout.createSequentialGroup()
-                        .addGroup(jif_PedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jl_IdRevendedor)
-                            .addComponent(jl_IdPedido))
-                        .addGap(72, 72, 72))
-                    .addGroup(jif_PedidoLayout.createSequentialGroup()
-                        .addGroup(jif_PedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jl_IdCampaña)
-                            .addComponent(jl_FechaIngreso)
-                            .addComponent(jl_FechaEntrga)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addComponent(jl_Estado)
+                        .addGap(112, 112, 112)
+                        .addComponent(jtf_EstadoPedido))
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addComponent(jl_EstrellaPorPedio)
+                        .addGap(91, 91, 91)
+                        .addComponent(jtf_EstrellasPorPedido))
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addComponent(jl_IdPedido)
+                        .addGap(135, 135, 135)
+                        .addComponent(jtf_IdPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addComponent(jl_IdRevendedor)
+                        .addGap(108, 108, 108)
+                        .addComponent(jtf_IdRevendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addComponent(jl_IdCampaña)
+                        .addGap(122, 122, 122)
+                        .addComponent(jtf_IdCampaña, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addComponent(jl_FechaIngreso)
+                        .addGap(111, 111, 111)
+                        .addComponent(jtf_FechaIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jl_FechaEntrega)
                             .addComponent(jl_FechaPago)
-                            .addComponent(jl_CantidadDeCajas)
-                            .addComponent(jl_EstrellaPorPedido)
-                            .addComponent(jl_EstadoPedido))
-                        .addGap(55, 55, 55)))
-                .addGroup(jif_PedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jtf_IdPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                    .addComponent(jtf_IdRevendedor)
-                    .addComponent(jtf_IdCampaña)
-                    .addComponent(jtf_FechaIngreso)
-                    .addComponent(jtf_FechaPago)
-                    .addComponent(jtf_FechaEntrega)
-                    .addComponent(jtf_CantidadDeCajas)
-                    .addComponent(jtf_EstrellaPorPedido)
-                    .addComponent(jtf_EstadoPedido))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
-                .addGroup(jif_PedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jb_PedidosPorCampaña, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_ListarPedido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_Actualizar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_Buscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_Eliminar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_Guardar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(148, 148, 148))
+                            .addComponent(jl_CantidadDeCajas))
+                        .addGap(92, 92, 92)
+                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jtf_FechaPago, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                            .addComponent(jtf_FechaEntrega)
+                            .addComponent(jtf_CantidadDeCajas))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jb_Guardar)
+                    .addComponent(jb_Eliminar)
+                    .addComponent(jb_Buscar)
+                    .addComponent(jb_Actualizar)
+                    .addComponent(jb_ListarPedido)
+                    .addComponent(jb_PedidosPorCampaña))
+                .addGap(107, 107, 107))
         );
-        jif_PedidoLayout.setVerticalGroup(
-            jif_PedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jif_PedidoLayout.createSequentialGroup()
+        jInternalFrame1Layout.setVerticalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jl_Titulo)
-                .addGap(36, 36, 36)
-                .addGroup(jif_PedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jl_TituloPedido)
+                .addGap(30, 30, 30)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_IdPedido)
                     .addComponent(jtf_IdPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jb_Guardar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jif_PedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(7, 7, 7)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_IdRevendedor)
                     .addComponent(jtf_IdRevendedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jb_Eliminar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jif_PedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_IdCampaña)
                     .addComponent(jtf_IdCampaña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jb_Buscar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jif_PedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(3, 3, 3)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_FechaIngreso)
                     .addComponent(jtf_FechaIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jb_Actualizar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jif_PedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_FechaEntrga)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_FechaEntrega)
                     .addComponent(jtf_FechaEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jb_ListarPedido))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jif_PedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_FechaPago)
                     .addComponent(jtf_FechaPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jb_PedidosPorCampaña))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jif_PedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_CantidadDeCajas)
                     .addComponent(jtf_CantidadDeCajas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jif_PedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_EstrellaPorPedido)
-                    .addComponent(jtf_EstrellaPorPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jif_PedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_EstadoPedido)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_EstrellaPorPedio)
+                    .addComponent(jtf_EstrellasPorPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_Estado)
                     .addComponent(jtf_EstadoPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(230, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jif_Pedido))
+            .addComponent(jInternalFrame1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jif_Pedido)
+            .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void jtf_EstadoPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_EstadoPedidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtf_EstadoPedidoActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VistaPedido().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JButton jb_Actualizar;
     private javax.swing.JButton jb_Buscar;
     private javax.swing.JButton jb_Eliminar;
     private javax.swing.JButton jb_Guardar;
     private javax.swing.JButton jb_ListarPedido;
     private javax.swing.JButton jb_PedidosPorCampaña;
-    private javax.swing.JInternalFrame jif_Pedido;
     private javax.swing.JLabel jl_CantidadDeCajas;
-    private javax.swing.JLabel jl_EstadoPedido;
-    private javax.swing.JLabel jl_EstrellaPorPedido;
-    private javax.swing.JLabel jl_FechaEntrga;
+    private javax.swing.JLabel jl_Estado;
+    private javax.swing.JLabel jl_EstrellaPorPedio;
+    private javax.swing.JLabel jl_FechaEntrega;
     private javax.swing.JLabel jl_FechaIngreso;
     private javax.swing.JLabel jl_FechaPago;
     private javax.swing.JLabel jl_IdCampaña;
     private javax.swing.JLabel jl_IdPedido;
     private javax.swing.JLabel jl_IdRevendedor;
-    private javax.swing.JLabel jl_Titulo;
+    private javax.swing.JLabel jl_TituloPedido;
     private javax.swing.JTextField jtf_CantidadDeCajas;
     private javax.swing.JTextField jtf_EstadoPedido;
-    private javax.swing.JTextField jtf_EstrellaPorPedido;
+    private javax.swing.JTextField jtf_EstrellasPorPedido;
     private javax.swing.JTextField jtf_FechaEntrega;
     private javax.swing.JTextField jtf_FechaIngreso;
     private javax.swing.JTextField jtf_FechaPago;
