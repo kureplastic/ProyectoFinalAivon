@@ -62,7 +62,7 @@ public class CampañaData {
 
     public Campaña buscarCampaña(int idCampaña) {
         Campaña campaña = null;
-        String sql = "SELECT * FROM campaña WHERE idCampaña = ?";
+        String sql = "SELECT * FROM campaña WHERE idCampaña = ?;";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);

@@ -178,13 +178,13 @@ public class PedidoData {
 
     }
 
-    private Campaña traerCampaña(int idCampaña) {
+    public Campaña traerCampaña(int idCampaña) {
         Conexion c = new Conexion();
         CampañaData cd = new CampañaData(c);
         return cd.buscarCampaña(idCampaña);
     }
 
-    private Revendedor traerRevendedor(int dni) {
+    public Revendedor traerRevendedor(int dni) {
         Conexion c = new Conexion();
         RevendedorData rd = new RevendedorData(c);
         return rd.buscarRevendedor(dni);

@@ -1,3 +1,5 @@
+package Vistas;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -27,8 +29,10 @@ public class VistaMenuAivon extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenu1 = new javax.swing.JMenu();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        escritorio = new javax.swing.JDesktopPane();
         jmb_MenuAivon = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jmb_Campañas = new javax.swing.JMenu();
         jmi_Campañas = new javax.swing.JMenuItem();
         jmi_Historixo = new javax.swing.JMenuItem();
@@ -42,24 +46,32 @@ public class VistaMenuAivon extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jDesktopPane1.setBackground(new java.awt.Color(255, 148, 126));
-        jDesktopPane1.setBorder(new javax.swing.border.MatteBorder(null));
-        jDesktopPane1.setForeground(new java.awt.Color(255, 148, 126));
-
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 426, Short.MAX_VALUE)
+        javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
+        escritorio.setLayout(escritorioLayout);
+        escritorioLayout.setHorizontalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 650, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+        escritorioLayout.setVerticalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 365, Short.MAX_VALUE)
         );
 
         jmb_MenuAivon.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jmb_MenuAivon.setForeground(new java.awt.Color(255, 148, 126));
         jmb_MenuAivon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jMenu2.setText("Archivo ");
+
+        jMenuItem1.setText("Salir");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
+
+        jmb_MenuAivon.add(jMenu2);
 
         jmb_Campañas.setText("Campañas");
 
@@ -108,11 +120,11 @@ public class VistaMenuAivon extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(escritorio)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(escritorio)
         );
 
         pack();
@@ -123,12 +135,21 @@ public class VistaMenuAivon extends javax.swing.JFrame {
     }//GEN-LAST:event_jmi_HistorixoActionPerformed
 
     private void jmi_CampañasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_CampañasActionPerformed
-        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        VistaCampaña aVista = new VistaCampaña();
+        aVista.setVisible(true);
+        escritorio.add(aVista);
+        escritorio.moveToFront(aVista);
     }//GEN-LAST:event_jmi_CampañasActionPerformed
 
     private void jm_PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_PedidoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jm_PedidoActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -173,8 +194,10 @@ public class VistaMenuAivon extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenu jm_Pedido;
     private javax.swing.JMenu jm_Producto;
     private javax.swing.JMenu jmb_Campañas;

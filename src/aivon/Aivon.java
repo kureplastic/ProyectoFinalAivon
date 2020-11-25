@@ -48,9 +48,9 @@ public class Aivon {
 //        Revendedor revendedor5 = new Revendedor(28456789, "Facundo", "Perez", 154765330, "facuperez@gmail.com", true, 1);
 //        Revendedor revendedor6 = new Revendedor(25466789, "Leticia", "Siciliani", 154805426, "leti4321@gmail.com", true, 1);
 //        
-          Campaña cam0 = new Campaña();
+//          Campaña cam0 = new Campaña();
           Campaña cam1 = new Campaña(-1,LocalDate.of(2010, Month.APRIL, 1), LocalDate.of(2010, Month.APRIL, 25), 5000, 10000, 2, true);
-          campañaData1.guardarCampaña(cam1);
+          campañaData1.guardarCampaña(cam1);         
 //        Campaña cam2 = new Campaña(LocalDate.of(2020, Month.APRIL, 4), LocalDate.of(2020, Month.APRIL, 25), 5000, 10000, 3, true);
 //        Campaña cam3 = new Campaña(LocalDate.of(1994, Month.APRIL, 2), LocalDate.of(1994, Month.APRIL, 25), 4000, 8000, 1, true);
 //        Campaña cam4 = new Campaña(LocalDate.of(1994, Month.APRIL, 5), LocalDate.of(1994, Month.APRIL, 25), 7000, 10000, 4, true);
