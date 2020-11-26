@@ -1,22 +1,20 @@
 package Vistas;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import entidades.*;
+import static java.lang.Float.parseFloat;
+import modelo.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-/**
- *
- * @author Alejandro
- */
 public class VistaHistorico extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form VistaHistorico
-     */
-    public VistaHistorico() {
+    private HistoricoCampañaData historicoData;
+    private Conexion conexion;
+    
+    public VistaHistorico() {    
         initComponents();
+        conexion = new Conexion();
+        historicoData = new HistoricoCampañaData(conexion);
     }
 
     /**
@@ -34,16 +32,16 @@ public class VistaHistorico extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jtf_IdHistoricoCampaña = new javax.swing.JTextField();
+        jtf_IdRevendedor = new javax.swing.JTextField();
+        jtf_EstrellasRC = new javax.swing.JTextField();
+        jtf_IdCampaña = new javax.swing.JTextField();
+        jcb_EstadoRC = new javax.swing.JCheckBox();
+        jb_Guardar = new javax.swing.JButton();
+        jb_Eliminar = new javax.swing.JButton();
+        jb_Buscar = new javax.swing.JButton();
+        jb_Actualizar = new javax.swing.JButton();
+        jb_Limpiar = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -56,7 +54,7 @@ public class VistaHistorico extends javax.swing.JInternalFrame {
         jl_Titulo.setForeground(new java.awt.Color(0, 0, 255));
         jl_Titulo.setText("-Historico-");
 
-        jLabel1.setText("ID Campaña");
+        jLabel1.setText("Id  Historico Campaña");
 
         jLabel2.setText("Campaña");
 
@@ -66,15 +64,25 @@ public class VistaHistorico extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Estado RC");
 
-        jButton1.setText("Gaurdar");
+        jb_Guardar.setText("Guardar");
+        jb_Guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_GuardarActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Eliminar");
+        jb_Eliminar.setText("Eliminar");
 
-        jButton3.setText("Buscar");
+        jb_Buscar.setText("Buscar");
+        jb_Buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_BuscarActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("Actualizar");
+        jb_Actualizar.setText("Actualizar");
 
-        jButton5.setText("LIMPIAR");
+        jb_Limpiar.setText("LIMPIAR");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,79 +103,97 @@ public class VistaHistorico extends javax.swing.JInternalFrame {
                             .addComponent(jLabel5))
                         .addGap(64, 64, 64)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtf_IdHistoricoCampaña, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtf_IdCampaña, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtf_IdRevendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtf_EstrellasRC, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcb_EstadoRC, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton2)
+                                .addComponent(jb_Eliminar)
                                 .addGap(28, 28, 28)
-                                .addComponent(jButton3)
+                                .addComponent(jb_Buscar)
                                 .addGap(30, 30, 30)
-                                .addComponent(jButton4)
+                                .addComponent(jb_Actualizar)
                                 .addGap(58, 58, 58)
-                                .addComponent(jButton5))))
+                                .addComponent(jb_Limpiar))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(52, 52, 52)
-                        .addComponent(jButton1)))
-                .addContainerGap(63, Short.MAX_VALUE))
+                        .addComponent(jb_Guardar)))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jl_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jCheckBox1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jtf_IdHistoricoCampaña, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jtf_IdCampaña, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jtf_IdRevendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(jtf_EstrellasRC, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel5))
+                    .addComponent(jcb_EstadoRC))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jb_Guardar)
+                    .addComponent(jb_Eliminar)
+                    .addComponent(jb_Buscar)
+                    .addComponent(jb_Actualizar)
+                    .addComponent(jb_Limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jb_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_BuscarActionPerformed
+          int id = Integer.parseInt(jtf_IdHistoricoCampaña.getText());
+        HistoricoCampaña c = new HistoricoCampaña();
+        c  = historicoData.buscarHistorico(id);
+        if (c != null){
+            jtf_IdHistoricoCampaña.setText(c.getIdHistoricoCampaña() + "");
+            jtf_IdRevendedor.setText(c.getRevendedor().getIdRevendedor() + "");
+            jtf_IdCampaña.setText(c.getCampaña().getIdCampaña() + "");
+            jtf_EstrellasRC.setText(c.getEstrellasRC() + "");
+            jcb_EstadoRC.isSelected();
+        }
+    }//GEN-LAST:event_jb_BuscarActionPerformed
+
+    private void jb_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_GuardarActionPerformed
+        
+    }//GEN-LAST:event_jb_GuardarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JButton jb_Actualizar;
+    private javax.swing.JButton jb_Buscar;
+    private javax.swing.JButton jb_Eliminar;
+    private javax.swing.JButton jb_Guardar;
+    private javax.swing.JButton jb_Limpiar;
+    private javax.swing.JCheckBox jcb_EstadoRC;
     private javax.swing.JLabel jl_Titulo;
+    private javax.swing.JTextField jtf_EstrellasRC;
+    private javax.swing.JTextField jtf_IdCampaña;
+    private javax.swing.JTextField jtf_IdHistoricoCampaña;
+    private javax.swing.JTextField jtf_IdRevendedor;
     // End of variables declaration//GEN-END:variables
 }

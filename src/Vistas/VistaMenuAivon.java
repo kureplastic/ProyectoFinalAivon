@@ -40,7 +40,9 @@ public class VistaMenuAivon extends javax.swing.JFrame {
         jmi_Pedido = new javax.swing.JMenuItem();
         jmi_DetallePedido = new javax.swing.JMenuItem();
         jmb_revendedor = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jm_Producto = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -101,17 +103,45 @@ public class VistaMenuAivon extends javax.swing.JFrame {
         });
 
         jmi_Pedido.setText("Pedido");
+        jmi_Pedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_PedidoActionPerformed(evt);
+            }
+        });
         jm_Pedido.add(jmi_Pedido);
 
         jmi_DetallePedido.setText("Detalle Pedido");
+        jmi_DetallePedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_DetallePedidoActionPerformed(evt);
+            }
+        });
         jm_Pedido.add(jmi_DetallePedido);
 
         jmb_MenuAivon.add(jm_Pedido);
 
         jmb_revendedor.setText("Revendedor ");
+
+        jMenuItem2.setText("Revendedor");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jmb_revendedor.add(jMenuItem2);
+
         jmb_MenuAivon.add(jmb_revendedor);
 
         jm_Producto.setText("Producto");
+
+        jMenuItem3.setText("Producto");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jm_Producto.add(jMenuItem3);
+
         jmb_MenuAivon.add(jm_Producto);
 
         setJMenuBar(jmb_MenuAivon);
@@ -131,7 +161,12 @@ public class VistaMenuAivon extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmi_HistorixoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_HistorixoActionPerformed
-        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        VistaHistorico aVista = new VistaHistorico();
+        aVista.setVisible(true);
+        escritorio.add(aVista);
+        escritorio.moveToFront(aVista);
     }//GEN-LAST:event_jmi_HistorixoActionPerformed
 
     private void jmi_CampañasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_CampañasActionPerformed
@@ -150,6 +185,42 @@ public class VistaMenuAivon extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jmi_PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_PedidoActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        VistaPedido aVista = new VistaPedido();
+        aVista.setVisible(true);
+        escritorio.add(aVista);
+        escritorio.moveToFront(aVista);
+    }//GEN-LAST:event_jmi_PedidoActionPerformed
+
+    private void jmi_DetallePedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_DetallePedidoActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        VistaDetallePedido aVista = new VistaDetallePedido();
+        aVista.setVisible(true);
+        escritorio.add(aVista);
+        escritorio.moveToFront(aVista);
+    }//GEN-LAST:event_jmi_DetallePedidoActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        VistaRevendedor aVista = new VistaRevendedor();
+        aVista.setVisible(true);
+        escritorio.add(aVista);
+        escritorio.moveToFront(aVista);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        VistaProducto aVista = new VistaProducto();
+        aVista.setVisible(true);
+        escritorio.add(aVista);
+        escritorio.moveToFront(aVista);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,6 +269,8 @@ public class VistaMenuAivon extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenu jm_Pedido;
     private javax.swing.JMenu jm_Producto;
     private javax.swing.JMenu jmb_Campañas;

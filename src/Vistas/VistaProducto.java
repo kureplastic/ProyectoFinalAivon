@@ -1,22 +1,20 @@
 package Vistas;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import entidades.*;
+import static java.lang.Float.parseFloat;
+import modelo.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-/**
- *
- * @author Alejandro
- */
 public class VistaProducto extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form VistaProducto
-     */
+    private ProductoData productoData;
+    private Conexion conexion;
+            
     public VistaProducto() {
         initComponents();
+        conexion = new Conexion();
+        productoData = new ProductoData(conexion);
     }
 
     /**
@@ -67,7 +65,7 @@ public class VistaProducto extends javax.swing.JInternalFrame {
         jl_Titulo.setForeground(new java.awt.Color(0, 0, 255));
         jl_Titulo.setText("-Producto-");
 
-        jl_IdPedido.setText("Id Pedido");
+        jl_IdPedido.setText("Id Producto");
 
         jLabel2.setText("Nombre Produto");
 
@@ -107,8 +105,18 @@ public class VistaProducto extends javax.swing.JInternalFrame {
         jb_Actualizar.setText("Actualizar");
 
         jb_Buscar.setText("Buscar");
+        jb_Buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_BuscarActionPerformed(evt);
+            }
+        });
 
         jb_Limpiar.setText("LIMPIAR");
+        jb_Limpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_LimpiarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -225,8 +233,36 @@ public class VistaProducto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jtf_DescripcionActionPerformed
 
     private void jb_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_GuardarActionPerformed
-        // TODO add your handling code here:
+         Producto p = new Producto(-1, Long.parseLong(jtf_Codigo.getText()), jtf_Nombre.getText(), jtf_Descripcion.getText(), 
+                 Integer.parseInt(jtf_Tamanio.getText()), Double.parseDouble(jtf_PrecioCosto.getText()), Double.parseDouble(jtf_PrecioPublico.getText()), Integer.parseInt(jtf_Estrella.getText()));
+           productoData.guardarProducto(p);
+        jtf_Codigo.setText(p.getCodigo() + "");
     }//GEN-LAST:event_jb_GuardarActionPerformed
+
+    private void jb_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_BuscarActionPerformed
+        int id = Integer.parseInt(jtf_Codigo.getText());
+        Producto c = new Producto();
+        c  = productoData.buscarProducto(id);
+        if (c != null){
+            jtf_Nombre.setText(c.getNombreProducto());
+            jtf_Tamanio.setText(c.getTamanio() + "");
+            jtf_Descripcion.setText(c.getDescripcion());
+            jtf_PrecioCosto.setText(c.getPrecioCosto() + "");
+            jtf_PrecioPublico.setText(c.getPrecioPublico() + "");
+            jtf_Estrella.setText(c.getEstrella() + "");
+        }
+    }//GEN-LAST:event_jb_BuscarActionPerformed
+
+    private void jb_LimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_LimpiarActionPerformed
+          jtf_Nombre.setText("");
+          jtf_Codigo.setText("");
+          jtf_IdPedido.setText("");
+          jtf_Tamanio.setText("");
+          jtf_Descripcion.setText("");
+          jtf_PrecioCosto.setText("");
+          jtf_PrecioPublico.setText("");
+          jtf_Estrella.setText("");
+    }//GEN-LAST:event_jb_LimpiarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
