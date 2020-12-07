@@ -225,7 +225,7 @@ private Conexion conexion;
 
     private void jb_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_guardarActionPerformed
 
-        Revendedor r = new Revendedor(-1 ,Long.parseLong(jtf_dni.getText()), jtf_nombreRevendedor.getText(), jtf_apellidoRevendedor.getText(),
+        Revendedor r = new Revendedor(-1 ,Long.parseLong(jtf_dni.getText()), jtf_nombre.getText(), jtf_apellido.getText(),
          Long.parseLong(jtf_telefono.getText()), jtf_mail.getText(),jcb_activo.isSelected(),Integer.parseInt(jtf_nivel.getText()));
         revendedorData.guardarRevendedor(r);
         jtf_idRevendedor.setText(r.getIdRevendedor() + "");
@@ -244,7 +244,7 @@ private Conexion conexion;
         if (jtf_idRevendedor.getText() != null)
         {
             int id = Integer.parseInt(jtf_idRevendedor.getText());
-            Revendedor r = new Revendedor(Long.parseLong(jtf_dni.getText()), jtf_nombreRevendedor.getText(), jtf_apellidoRevendedor.getText(),
+            Revendedor r = new Revendedor(Long.parseLong(jtf_dni.getText()), jtf_nombre.getText(), jtf_apellido.getText(),
          Long.parseLong(jtf_telefono.getText()), jtf_mail.getText(),jcb_activo.isSelected(),Integer.parseInt(jtf_nivel.getText()));
             revendedorData.actualizarRevendedor(r);
         }
