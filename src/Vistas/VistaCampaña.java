@@ -204,8 +204,8 @@ public class VistaCampaña extends javax.swing.JInternalFrame {
     private void jb_CargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_CargarActionPerformed
     //  float montominimo = parseFloat(jtf_MontoMinimo.getText());
         Campaña c = new Campaña(-1, LocalDate.parse(jtf_FechaInicio.getText(),
-           DateTimeFormatter.ofPattern("yyyy-mm-dd")),
-           LocalDate.parse(jtf_FechaFinal.getText(),DateTimeFormatter.ofPattern("yyyy-mm-dd")),
+           DateTimeFormatter.ofPattern("yyyy-MM-dd")),
+           LocalDate.parse(jtf_FechaFinal.getText(),DateTimeFormatter.ofPattern("yyyy-MM-dd")),
            parseFloat(jtf_MontoMinimo.getText()),
            parseFloat(jtf_MontoMaximo.getText()), Integer.parseInt(jtf_EstrellaPorCampaña.getText()), true);
            campañaData.guardarCampaña(c);
@@ -224,8 +224,8 @@ public class VistaCampaña extends javax.swing.JInternalFrame {
         {
             int id = Integer.parseInt(jtf_IdCampaña.getText());
             Campaña c = new Campaña(id, LocalDate.parse(jtf_FechaInicio.getText(),
-               DateTimeFormatter.ofPattern("yyyy-mm-dd")),
-               LocalDate.parse(jtf_FechaFinal.getText(),DateTimeFormatter.ofPattern("yyyy-mm-dd")),
+               DateTimeFormatter.ofPattern("yyyy-MM-dd")),
+               LocalDate.parse(jtf_FechaFinal.getText(),DateTimeFormatter.ofPattern("yyyy-MM-dd")),
                parseFloat(jtf_MontoMinimo.getText()),
                parseFloat(jtf_MontoMaximo.getText()), Integer.parseInt(jtf_EstrellaPorCampaña.getText()), true);
            campañaData.actualizarCampaña(c);

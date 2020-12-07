@@ -10,11 +10,14 @@ public class VistaHistorico extends javax.swing.JInternalFrame {
 
     private HistoricoCampañaData historicoData;
     private Conexion conexion;
-    
+     private CampañaData campañaData;
+    private RevendedorData revendedorData;
     public VistaHistorico() {    
         initComponents();
         conexion = new Conexion();
         historicoData = new HistoricoCampañaData(conexion);
+        campañaData= new CampañaData(conexion);
+        revendedorData= new RevendedorData(conexion);
     }
 
     @SuppressWarnings("unchecked")
@@ -169,10 +172,11 @@ public class VistaHistorico extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jb_BuscarActionPerformed
 
     private void jb_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_GuardarActionPerformed
-    //   HistoricoCampaña c = new HistoricoCampaña(-1, Integer.parseInt(jtf_IdCampaña.getText()),Integer.parseInt(jtf_IdRevendedor.getText()),
-     //   Integer.parseInt(jtf_EstrellasRC.getText()), jcb_EstadoRC.isSelected());
-     //      historicoData.guardarHistorico(c);
-     //       jtf_IdHistoricoCampaña.setText(c.getIdHistoricoCampaña() + "");
+       HistoricoCampaña c = new HistoricoCampaña(-1, campañaData.buscarCampaña(Integer.parseInt(jtf_IdCampaña.getText())),
+               revendedorData.buscarRevendedor(Integer.parseInt(jtf_IdRevendedor.getText())),
+       Integer.parseInt(jtf_EstrellasRC.getText()), jcb_EstadoRC.isSelected());
+          historicoData.guardarHistorico(c);
+            jtf_IdHistoricoCampaña.setText(c.getIdHistoricoCampaña() + "");
         
     }//GEN-LAST:event_jb_GuardarActionPerformed
 private void jb_BorrarActionPerformed(java.awt.event.ActionEvent evt) {                                          

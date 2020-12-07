@@ -107,8 +107,8 @@ public class CampañaData {
     }
 
     public void actualizarCampaña(Campaña campaña) {
-        String sql = "UPDATE campaña SET fechaInicio = ?, fechaFinal = ?, montoMin = ?, montoTope = ?, estrellasXCampaña = ?, estadoCampaña = ?"
-                + "WHERE campaña.idCampaña = ?";
+        String sql = "UPDATE campaña SET fechaInicio = ?, fechaFinal = ?, montoMin = ?, montoTope = ?, estrellasXCampaña = ?, estadoCampaña = ? "
+                + "WHERE idCampaña = ?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
