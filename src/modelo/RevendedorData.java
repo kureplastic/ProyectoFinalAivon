@@ -52,31 +52,31 @@ public class RevendedorData {
         }
     }
 
-    public Revendedor buscarRevendedor(int dni) {
+    public Revendedor buscarRevendedor(long dni) {
         Revendedor revendedor = null;
         String sql = "SELECT * FROM `revendedor` WHERE dni = ?";
 
         try {
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, dni);
-            ResultSet rs = ps.executeQuery();
-
-            if (rs.next()) {
-                JOptionPane.showMessageDialog(null, "REVENDEDOR ENCONTRADO");
-                revendedor = new Revendedor();
-                revendedor.setIdRevendedor(rs.getInt("idRevendedor"));
-                revendedor.setDni(rs.getLong("dni"));
-                revendedor.setNombreRevendedor(rs.getString("nombreRevendedor"));
-                revendedor.setApellidoRevendedor(rs.getString("apellidoRevendedor"));
-                revendedor.setTelefono(rs.getLong("telefono"));
-                revendedor.setMail(rs.getString("mail"));
-                revendedor.setActivo(rs.getBoolean("activo"));
-                revendedor.setNivel(rs.getInt("nivel"));
-
-            } else {
-                JOptionPane.showMessageDialog(null, "NO SE ENCONTRO EL REVENDEDOR");
+            ResultSet rs;
+            try (PreparedStatement ps = con.prepareStatement(sql)) {
+                ps.setLong(1, dni);
+                rs = ps.executeQuery();
+                if (rs.next()) {
+                    JOptionPane.showMessageDialog(null, "REVENDEDOR ENCONTRADO");
+                    revendedor = new Revendedor();
+                    revendedor.setIdRevendedor(rs.getInt("idRevendedor"));
+                    revendedor.setDni(rs.getLong("dni"));
+                    revendedor.setNombreRevendedor(rs.getString("nombreRevendedor"));
+                    revendedor.setApellidoRevendedor(rs.getString("apellidoRevendedor"));
+                    revendedor.setTelefono(rs.getLong("telefono"));
+                    revendedor.setMail(rs.getString("mail"));
+                    revendedor.setActivo(rs.getBoolean("activo"));
+                    revendedor.setNivel(rs.getInt("nivel"));
+                    
+                } else {
+                    JOptionPane.showMessageDialog(null, "NO SE ENCONTRO EL REVENDEDOR");
+                }
             }
-            ps.close();
             rs.close();
 
         } catch (SQLException ex) {
@@ -100,9 +100,7 @@ public class RevendedorData {
     }
     
     public void actualizarRevendedor(Revendedor revendedor) {
-        String sql =  "UPDATE `revendedor` SET ``dni`= ?,`nombreRevendedor`= ?,`apellidoRevendedor`= ?,"
-                    + "`telefono`= ?,`mail`= ?,`activo`= ?,`nivel`= ?"
-                    + "WHERE idRevendedor = ?";
+        String sql =  "UPDATE revendedor SET dni= ?, nombreRevendedor= ?, apellidoRevendedor= ?, telefono= ?, mail= ?, activo= ?, nivel= ? WHERE revendedor.idRevendedor = ?";
         
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -113,6 +111,7 @@ public class RevendedorData {
             ps.setString(5, revendedor.getMail());
             ps.setBoolean(6, revendedor.isActivo());
             ps.setInt(7, revendedor.getNivel());
+            ps.setInt(8, revendedor.getIdRevendedor());
             
             if (ps.executeUpdate() != 0) {
                 JOptionPane.showMessageDialog(null, "SE ACTUALIZO REVENDEDOR");
@@ -122,7 +121,7 @@ public class RevendedorData {
             ps.close();
             
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "ERROR: " + ex);
+            JOptionPane.showMessageDialog(null, "ERROR EN CARGA: " + ex);
         }
         
     }
@@ -160,4 +159,37 @@ public class RevendedorData {
         return revendedores;       
     }
 
+    Revendedor buscarRevendedorPorID(int idRevendedor) {
+        Revendedor revendedor = null;
+        String sql = "SELECT * FROM `revendedor` WHERE idRevendedor = ?";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, idRevendedor);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "REVENDEDOR ENCONTRADO");
+                revendedor = new Revendedor();
+                revendedor.setIdRevendedor(rs.getInt("idRevendedor"));
+                revendedor.setDni(rs.getLong("dni"));
+                revendedor.setNombreRevendedor(rs.getString("nombreRevendedor"));
+                revendedor.setApellidoRevendedor(rs.getString("apellidoRevendedor"));
+                revendedor.setTelefono(rs.getLong("telefono"));
+                revendedor.setMail(rs.getString("mail"));
+                revendedor.setActivo(rs.getBoolean("activo"));
+                revendedor.setNivel(rs.getInt("nivel"));
+
+            } else {
+                JOptionPane.showMessageDialog(null, "NO SE ENCONTRO EL REVENDEDOR");
+            }
+            ps.close();
+            rs.close();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "ERROR: " + ex);
+        }
+
+        return revendedor;
+    }
 }

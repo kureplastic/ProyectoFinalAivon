@@ -10,15 +10,11 @@ public class VistaPedido extends javax.swing.JInternalFrame {
 
     private PedidoData pedidoData;
     private Conexion conexion;
-    private CampañaData campañaData;
-    private RevendedorData revendedorData;
     
     public VistaPedido() {
         initComponents();
         conexion = new Conexion();
         pedidoData = new PedidoData(conexion);
-        campañaData= new CampañaData(conexion);
-        revendedorData= new RevendedorData(conexion);
     }
 
     @SuppressWarnings("unchecked")
@@ -225,15 +221,14 @@ public class VistaPedido extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jb_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_GuardarActionPerformed
-       Pedido p = new Pedido(-1, campañaData.buscarCampaña(Integer.parseInt(jtf_IdCampaña.getText())),
-         revendedorData.buscarRevendedor(Integer.parseInt(jtf_IdRevendedor.getText())),
-         LocalDate.parse(jtf_FechaIngreso.getText(),DateTimeFormatter.ofPattern("yyyy-MM-dd")),
-       LocalDate.parse(jtf_FechaEntrega.getText(),DateTimeFormatter.ofPattern("yyyy-MM-dd")),
-      LocalDate.parse(jtf_FechaPago.getText(),DateTimeFormatter.ofPattern("yyyy-MM-dd")),
-      Integer.parseInt(jtf_CantidadDeCajas.getText()),  parseFloat(jtf_ImporteTotal.getText()), 
-         Integer.parseInt(jtf_EstrellasPorPedido.getText()), jcb_EstadoPedido.isSelected());
-       pedidoData.guardarPedido(p);
-        jtf_IdPedido.setText(p.getIdPedido() + "");
+       // Pedido p = new Pedido(-1, Integer.parseInt(jtf_IdCampaña.getText()), Integer.parseInt(jtf_IdRevendedor.getText()),
+       //   LocalDate.parse(jtf_FechaIngreso.getText(),DateTimeFormatter.ofPattern("yyyy-mm-dd")),
+       //   LocalDate.parse(jtf_FechaEntrega.getText(),DateTimeFormatter.ofPattern("yyyy-mm-dd")),
+       //   LocalDate.parse(jtf_FechaPago.getText(),DateTimeFormatter.ofPattern("yyyy-mm-dd")),
+      //   Integer.parseInt(jtf_CantidadDeCajas.getText()),  parseFloat(jtf_ImporteTotal.getText()), 
+       //   Integer.parseInt(jtf_EstrellasPorPedido.getText()), jcb_EstadoPedido.isSelected());
+       // pedidoData.guardarPedido(p);
+       // jtf_IdPedido.setText(p.getIdPedido() + "");
     }//GEN-LAST:event_jb_GuardarActionPerformed
 
     private void jb_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_BuscarActionPerformed
